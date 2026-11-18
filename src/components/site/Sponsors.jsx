@@ -12,13 +12,17 @@ export default function Sponsors() {
           title="Quem constrói junto com o congresso."
           description="As cotas de patrocínio estão abertas para empresas de materiais, construtoras, escritórios e entidades do setor."
           action={
-            <a
-              href={`mailto:${EVENT.email}?subject=Patroc%C3%ADnio%20CivilTec`}
-              className="label-mono inline-flex items-center gap-2 self-start border-b border-ink/30 pb-1 text-ink transition hover:border-signal hover:text-ink/70 md:self-end"
-            >
-              Quero patrocinar
-              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
+            EVENT.email ? (
+              <a
+                href={`mailto:${EVENT.email}?subject=Patroc%C3%ADnio%20CivilTec`}
+                className="label-mono inline-flex items-center gap-2 self-start border-b border-ink/30 pb-1 text-ink transition hover:border-signal hover:text-ink/70 md:self-end"
+              >
+                Quero patrocinar
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            ) : (
+              <span className="label-mono text-ink/45">Contato oficial em definição</span>
+            )
           }
         />
 
@@ -59,16 +63,22 @@ export default function Sponsors() {
               Cota máster, atividade ou apoio institucional?
             </p>
             <p className="mt-1 text-[14px] text-ink/60">
-              Envie um e-mail para a comissão e receba o mídia kit com números e contrapartidas.
+              {EVENT.email
+                ? "Envie um e-mail para a comissão e receba o mídia kit com números e contrapartidas."
+                : "O canal de contato para solicitar o mídia kit será divulgado em breve."}
             </p>
           </div>
-          <a
-            href={`mailto:${EVENT.email}?subject=M%C3%ADdia%20kit%20CivilTec`}
-            className="inline-flex min-h-[48px] items-center gap-2 border border-ink bg-ink px-6 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink-foreground transition hover:bg-ink/85"
-          >
-            Receber mídia kit
-            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </a>
+          {EVENT.email ? (
+            <a
+              href={`mailto:${EVENT.email}?subject=M%C3%ADdia%20kit%20CivilTec`}
+              className="inline-flex min-h-[48px] items-center gap-2 border border-ink bg-ink px-6 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink-foreground transition hover:bg-ink/85"
+            >
+              Receber mídia kit
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          ) : (
+            <span className="label-mono text-ink/45">Contato oficial em definição</span>
+          )}
         </div>
       </div>
     </section>

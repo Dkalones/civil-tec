@@ -21,13 +21,16 @@ export default function Faq() {
             />
             <p className="mt-8 text-[14px] leading-relaxed text-ink/60">
               Não encontrou o que procurava?{" "}
-              <a
-                href={`mailto:${EVENT.email}`}
-                className="font-semibold text-ink underline decoration-signal decoration-2 underline-offset-4"
-              >
-                Escreva para a organização
-              </a>
-              .
+              {EVENT.email ? (
+                <a
+                  href={`mailto:${EVENT.email}`}
+                  className="font-semibold text-ink underline decoration-signal decoration-2 underline-offset-4"
+                >
+                  Escreva para a organização
+                </a>
+              ) : (
+                <span>Os canais oficiais de contato serão divulgados em breve.</span>
+              )}
             </p>
           </div>
 

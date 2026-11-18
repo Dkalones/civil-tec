@@ -1,4 +1,3 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
 
 // Base44 managed file: error-capture v1. Keep it as it is, and keep it as `main` in wrangler.jsonc; Base44
 // replaces it with newer versions. The Worker's entry: TanStack Start's default one, which also reports a

@@ -77,7 +77,7 @@ function Page() {
             <br />
             {EVENT.address}
             <br />
-            Contato: {EVENT.email}
+            Contato: {EVENT.email || "canal oficial será divulgado em breve"}
           </p>
         </div>
       </section>

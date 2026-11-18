@@ -1,5 +1,3 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
-
 export const EVENT = {
   shortName: "CivilTec",
   name: "Congresso de Tecnologia em Construções",
@@ -11,11 +9,11 @@ export const EVENT = {
   city: "Pombal · Paraíba",
   venue: "CCTA · UEPB Campus Pombal",
   address: "Rua Jairo Vieira Feitosa, 1770 · Pereiros, Pombal — PB, 58840-000",
-  email: "cortecoficial@gmail.com",
+  email: null,
   instagram: "@cortec.oficial",
   instagramUrl: "https://www.instagram.com/cortec.oficial/",
-  whatsapp: "+55 83 98115-6067",
-  whatsappUrl: "https://wa.me/5583981156067",
+  whatsapp: null,
+  whatsappUrl: null,
   issn: "2965-789X",
   map: { lat: -6.7703, lng: -37.8006 },
   mapsUrl:
@@ -311,7 +309,7 @@ export const SUBMISSION_RULES = [
 export const FAQ = [
   {
     q: "Como faço minha inscrição?",
-    a: "Pelo formulário de inscrição do site. Você preenche nome, e-mail, CPF, categoria e instituição, e recebe por e-mail as instruções de pagamento e o comprovante da vaga.",
+    a: "Pelo formulário de inscrição do site. Você preenche nome, e-mail, CPF, categoria e instituição. Depois do envio, aguarde a confirmação da comissão organizadora e as instruções oficiais de pagamento.",
   },
   {
     q: "Recebo certificado de participação?",

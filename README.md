@@ -1,41 +1,43 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+# CivilTec — Congresso Regional de Engenharia Civil
 
-# Base44 App — TanStack Start
+Site institucional do CivilTec, com informações do evento, programação, palestrantes, inscrições e submissão de trabalhos.
 
-A full-stack Base44 app: [TanStack Start](https://tanstack.com/start) (React 19, plain JavaScript) with file-based routes, server functions and server routes, server-rendered and hosted by db.
+## Stack
 
-## What is in the starter
+- React 19 e JavaScript
+- TanStack Start e TanStack Router
+- Vite 8
+- Tailwind CSS 3
+- Base44 SDK e entidades para inscrições e submissões
+- Cloudflare Workers para execução SSR
 
-| Route | File |
-| --- | --- |
-| `/` | `src/routes/index.jsx` — a placeholder home page, replaced by the app's own |
+## Requisitos
 
-## Run locally
+- Node.js 22.12 ou superior (recomendado)
+- npm 10 ou superior
+- Acesso ao projeto Base44 para habilitar persistência, autenticação e publicação
 
-```bash
-npm ci
-base44 login   # one-time per machine
-base44 link    # one-time per clone
-base44 dev     # local backend + app together
-```
-
-## Build and publish
+## Desenvolvimento local
 
 ```bash
-npm run build         # -> dist/client (assets) + dist/server (the Worker)
-base44 deploy         # or publish from the Base44 builder
+npm install
+npm run dev
 ```
 
-There is no `index.html`: the HTML document is rendered on the server from `src/routes/__root.jsx`. The build runs through the [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/), so dev and build both execute server code in `workerd`.
+Para testar os recursos conectados ao Base44, vincule o projeto à aplicação correta usando a CLI e configure as credenciais/variáveis exigidas pelo ambiente. Sem o backend Base44, as páginas públicas podem ser visualizadas, mas inscrições e submissões não serão persistidas.
 
-## How the pieces fit
+## Verificações
 
-- **Pages** are files in `src/routes/`. A route's `loader` runs on the server for a document request and in the browser for a client navigation; `Route.useLoaderData()` gives the component the resolved data.
-- **Server functions** (in `src/lib/server-fns.js`, created with the first one) are RPCs created with `createServerFn`. `src/start.js` runs every one of them through `authMiddleware`, which sends the visitor's token along, so `context.getBase44()` returns a client acting as that visitor and entity access rules apply. `context.getBase44().asServiceRole` bypasses them, so use it only after authenticating the caller (`.middleware([requireUser])`) and checking they may access the records involved: server functions and server routes are public endpoints anyone can call with any input. See **Server Security** in `AGENTS.md`. Call it only in handlers that need Base44: it reads the platform headers, and a handler that never calls it works without them.
-- **Secrets** are read in server code with `import { secrets } from "base44:runtime"` → `secrets.get("NAME")`, inside a handler. Never `process.env`.
-- **Server routes** (`src/routes/api/*.js`) are raw HTTP endpoints for URLs something other than the app's own code requests (webhooks, downloads, feeds); the app's pages call server functions. `src/start.js` runs every request through `base44RequestMiddleware`, so their `server.handlers` receive the same `context.getBase44()` (`({ request, params, context }) => …`).
-- **Server-only code** lives in `*.server.js` files (TanStack refuses to bundle them for the browser).
-- **Auth** is resolved client-side after hydration (`useAuth()`); the server is anonymous on a document request, so give per-user pages `ssr: false`.
-- **Sign-in and gated pages** are not wired in the starter: `src/components/auth/` holds the pages (login, register, password reset, MCP consent) and a login gate for `src/routes/_authed/`, to add when the app needs them. See **Adding Authentication** in `AGENTS.md`.
-- **AI**: TanStack AI is installed and runs on the Base44 AI gateway, with no API key and usage billed to the app's AI credits. `gatewayModel(context.getBase44())` in `src/lib/ai.server.js` builds the adapter; `AGENTS.md` has a streaming chat example (a server function plus `useChat`).
-- **Caching**: the platform caches only what a route opts into via `headers()` (`Cache-Control: public, s-maxage=…`). Everything else is served fresh.
+```bash
+npm run lint
+npm run build
+```
+
+## Publicação
+
+Este projeto usa TanStack Start com renderização no servidor e Cloudflare Workers. Não é um site estático convencional: GitHub Pages, por si só, não executa o servidor SSR nem as funções do backend. Publique pelo fluxo Base44/Cloudflare configurado para o projeto.
+
+## Observações
+
+- Os canais oficiais de e-mail e WhatsApp estão temporariamente como placeholders até a organização confirmar os contatos.
+- Antes de divulgar a programação, confirme a sala do minicurso “Membranas de Alta Performance para Impermeabilização”: há conflito de sala no Dia 1, das 13h às 17h, com outro minicurso listado na Sala de Aula.

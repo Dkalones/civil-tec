@@ -22,7 +22,7 @@ function downloadRules() {
     "",
     `EIXOS TEMÁTICOS: ${SUBMISSION_AREAS.join("; ")}.`,
     "",
-    `Dúvidas: ${EVENT.email}`,
+    `Dúvidas: ${EVENT.email || "canais oficiais serão divulgados em breve"}`,
   ].join("\n");
 
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });

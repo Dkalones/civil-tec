@@ -1,4 +1,12 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+const db = globalThis.__B44_DB__ || {
+  entities: new Proxy({}, {
+    get: () => ({
+      create: async () => {
+        throw new Error("O serviço de inscrições ainda não está conectado.");
+      },
+    }),
+  }),
+};
 
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -110,7 +118,7 @@ function Page() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       setSubmitError(
-        "Não conseguimos registrar sua inscrição agora. Tente novamente ou fale com a organização pelo WhatsApp.",
+        "Não conseguimos registrar sua inscrição agora. Tente novamente mais tarde; os canais oficiais de contato serão divulgados em breve.",
       );
     } finally {
       setSubmitting(false);
@@ -149,8 +157,8 @@ function Page() {
               Recebemos seus dados
             </h2>
             <p className="mt-2 text-[15px] leading-relaxed text-ink/65">
-              Guarde o protocolo abaixo. Para confirmar a vaga, fale com a organização pelo
-              WhatsApp informando o código e receba as instruções de pagamento.
+              Guarde o protocolo abaixo. A inscrição fica pendente até a confirmação do pagamento;
+              as instruções oficiais serão divulgadas pela organização.
             </p>
 
             <p className="mt-6 border border-ink/15 bg-concrete/50 px-4 py-3 font-mono text-lg tracking-[0.18em] text-ink">
@@ -177,15 +185,17 @@ function Page() {
             </dl>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={EVENT.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className={btnPrimary}
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Confirmar pelo WhatsApp
-              </a>
+              {EVENT.whatsappUrl && (
+                <a
+                  href={EVENT.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={btnPrimary}
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  Confirmar pelo WhatsApp
+                </a>
+              )}
               <Link to="/" className={btnGhostLight}>
                 Voltar ao site
               </Link>
@@ -363,15 +373,19 @@ function Page() {
                     A inscrição é registrada agora e a vaga é confirmada após o pagamento por PIX
                     ou transferência, com instruções enviadas pela organização.
                   </p>
-                  <a
-                    href={EVENT.whatsappUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink underline decoration-signal decoration-2 underline-offset-4"
-                  >
-                    <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
-                    Falar com a organização
-                  </a>
+                  {EVENT.whatsappUrl ? (
+                    <a
+                      href={EVENT.whatsappUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink underline decoration-signal decoration-2 underline-offset-4"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                      Falar com a organização
+                    </a>
+                  ) : (
+                    <p className="mt-4 text-[12px] text-ink/45">Canais oficiais de contato em definição.</p>
+                  )}
                 </div>
               </div>
             </aside>

@@ -72,18 +72,22 @@ export default function Venue() {
             <div className="mt-5 border border-ink/15 bg-card p-5">
               <p className="label-mono text-ink/45">Hospedagem</p>
               <p className="mt-3 text-[14px] leading-relaxed text-ink/70">
-                Hotéis de Pombal oferecem tarifa de congressista. A lista com contatos e valores
-                é enviada por e-mail depois da inscrição confirmada.
+                A organização divulgará, mais perto do evento, opções de hospedagem e eventuais
+                condições especiais para congressistas.
               </p>
-              <a
-                href={EVENT.whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-2 border border-ink px-4 py-2.5 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground"
-              >
-                <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
-                Falar com a organização
-              </a>
+              {EVENT.whatsappUrl ? (
+                <a
+                  href={EVENT.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 border border-ink px-4 py-2.5 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground"
+                >
+                  <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                  Falar com a organização
+                </a>
+              ) : (
+                <p className="mt-4 text-[12px] text-ink/45">Contato oficial em definição.</p>
+              )}
             </div>
           </div>
         </div>

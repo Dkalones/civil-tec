@@ -73,26 +73,33 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <p className="label-mono text-ink-foreground/40">Contato</p>
             <ul className="mt-4 space-y-3 text-[14px]">
-              <li>
-                <a
-                  href={`mailto:${EVENT.email}`}
-                  className="inline-flex items-center gap-2.5 text-ink-foreground/70 transition hover:text-signal"
-                >
-                  <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  {EVENT.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={EVENT.whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2.5 text-ink-foreground/70 transition hover:text-signal"
-                >
-                  <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  {EVENT.whatsapp}
-                </a>
-              </li>
+              {EVENT.email && (
+                <li>
+                  <a
+                    href={`mailto:${EVENT.email}`}
+                    className="inline-flex items-center gap-2.5 text-ink-foreground/70 transition hover:text-signal"
+                  >
+                    <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    {EVENT.email}
+                  </a>
+                </li>
+              )}
+              {EVENT.whatsappUrl && EVENT.whatsapp && (
+                <li>
+                  <a
+                    href={EVENT.whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2.5 text-ink-foreground/70 transition hover:text-signal"
+                  >
+                    <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    {EVENT.whatsapp}
+                  </a>
+                </li>
+              )}
+              {(!EVENT.email || !EVENT.whatsappUrl) && (
+                <li className="text-ink-foreground/45">Canais oficiais de contato em definição.</li>
+              )}
               <li>
                 <a
                   href={EVENT.instagramUrl}

@@ -1,4 +1,12 @@
-const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+const db = globalThis.__B44_DB__ || {
+  entities: new Proxy({}, {
+    get: () => ({
+      create: async () => {
+        throw new Error("O serviço de submissões ainda não está conectado.");
+      },
+    }),
+  }),
+};
 
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -44,7 +52,7 @@ function downloadRules() {
     "",
     `EIXOS TEMÁTICOS: ${SUBMISSION_AREAS.join("; ")}.`,
     "",
-    `Dúvidas: ${EVENT.email}`,
+    `Dúvidas: ${EVENT.email || "canais oficiais serão divulgados em breve"}`,
   ].join("\n");
 
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
@@ -142,8 +150,8 @@ function Page() {
               Submissão registrada
             </h2>
             <p className="mt-2 text-[15px] leading-relaxed text-ink/65">
-              Guarde o protocolo. A comissão científica avalia os resumos e responde no e-mail
-              informado até 30 de setembro.
+              Guarde o protocolo. A comissão científica fará a avaliação; o resultado será
+              divulgado pelos canais oficiais do evento.
             </p>
 
             <p className="mt-6 border border-ink/15 bg-concrete/50 px-4 py-3 font-mono text-lg tracking-[0.18em] text-ink">
