@@ -7,7 +7,7 @@ export const EVENT = {
   startISO: "2027-11-04T08:00:00-03:00",
   endISO: "2027-11-08T18:00:00-03:00",
   city: "Araruna · Paraíba",
-  venue: "Campus VIII · UEPB (CCTS)",
+  venue: "Campus VIII · Prof.ª Maria da Penha (CCTS/UEPB)",
   address: "Av. Cel. Pedro Targino, s/n · Centro, Araruna — PB, 58233-000",
   email: null,
   instagram: "@civiltec.uepb",
@@ -347,7 +347,7 @@ export const SPONSOR_TIERS = [
 export const VENUE_TIPS = [
   {
     title: "De carro",
-    text: "Acesso pela BR-230, saída para o centro de Araruna. Há estacionamento gratuito no campus durante o evento.",
+    text: "Acesso pela PB-111, seguindo a sinalização para o Campus VIII da UEPB. Há estacionamento no campus durante o evento.",
   },
   {
     title: "De ônibus",
