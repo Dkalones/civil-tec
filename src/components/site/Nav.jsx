@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { EVENT } from "@/lib/event-data";
 import { btnPrimary } from "@/components/site/styles";
+import LogoPlaceholder from "@/components/site/LogoPlaceholder";
 
 const LINKS = [
   { label: "Sobre", hash: "sobre" },
