@@ -12,7 +12,7 @@ import { btnPrimary, btnGhostDark } from "@/components/site/styles";
 function downloadRules() {
   const text = [
     "NORMAS PARA SUBMISSÃO DE TRABALHOS — CIVILTEC",
-    "Congresso de Tecnologia em Construções · CCTA/UEPB · Pombal — PB",
+    "Congresso de Tecnologia em Construções · Campus VIII (CCTS/UEPB) · Araruna — PB",
     "",
     "PRAZOS",
     ...SUBMISSION_DEADLINES.map((d) => `- ${d.label}: ${d.date}`),
