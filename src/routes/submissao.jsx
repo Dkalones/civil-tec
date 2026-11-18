@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 function downloadRules() {
   const text = [
     "NORMAS PARA SUBMISSÃO DE TRABALHOS — CIVILTEC",
-    `${EVENT.name} · CCTA/UEPB · Pombal — PB`,
+    `${EVENT.name} · Campus VIII (CCTS/UEPB) · Araruna — PB`,
     "",
     "PRAZOS",
     ...SUBMISSION_DEADLINES.map((d) => `- ${d.label}: ${d.date}`),
