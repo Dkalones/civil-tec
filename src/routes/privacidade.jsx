@@ -56,7 +56,7 @@ function Page() {
         <div className="mt-10 border border-ink/15 bg-concrete/50 p-6">
           <p className="label-mono text-ink/45">Controlador dos dados</p>
           <p className="mt-2 text-[14.5px] leading-relaxed text-ink/70">
-            Comissão organizadora do {EVENT.shortName} — CORTEC · CCTA/UEPB
+            Comissão organizadora do {EVENT.shortName} — CiviTec · UEPB (Campus VIII · CCTS)
             <br />
             {EVENT.address}
             <br />
