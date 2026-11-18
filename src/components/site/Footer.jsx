@@ -37,8 +37,8 @@ export default function Footer() {
             </div>
 
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-foreground/65">
-              {EVENT.name}. Realização CORTEC · CCTA/UEPB, com apoio da comunidade de engenharia
-              civil do sertão da Paraíba.
+              {EVENT.name}. Realização CiviTec · UEPB, com apoio da comunidade de engenharia
+              civil da Paraíba.
             </p>
 
             <p className="mt-6 font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-ink-foreground/45">
@@ -121,7 +121,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-ink-foreground/12 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/40">
-            © {new Date().getFullYear()} CORTEC · UEPB — Anais ISSN {EVENT.issn}
+            © {new Date().getFullYear()} CiviTec · UEPB — Anais ISSN {EVENT.issn}
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link
