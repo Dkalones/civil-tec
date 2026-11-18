@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
 import { EVENT } from "@/lib/event-data";
 import { btnPrimary } from "@/components/site/styles";
+import LogoPlaceholder from "@/components/site/LogoPlaceholder";
 
 const NAV = [
   { label: "Sobre", hash: "sobre" },
@@ -22,18 +23,8 @@ export default function Footer() {
       <div className="relative mx-auto w-full max-w-[1240px] px-5 py-16 sm:px-8 md:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center bg-signal font-heading text-[14px] font-extrabold text-ink">
-                CT
-              </span>
-              <div className="leading-none">
-                <p className="font-heading text-lg font-extrabold uppercase tracking-tight">
-                  CivilTec
-                </p>
-                <p className="label-mono mt-1 text-ink-foreground/45">
-                  {EVENT.editionLabel}
-                </p>
-              </div>
+            <div>
+              <LogoPlaceholder variant="footer" />
             </div>
 
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-foreground/65">
