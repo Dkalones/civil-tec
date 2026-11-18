@@ -27,18 +27,13 @@ export const EVENT = {
   },
 };
 
-export const STATS = [
-  { value: "24", label: "palestras técnicas" },
-  { value: "16", label: "minicursos práticos" },
-  { value: "05", label: "dias de programação" },
-  { value: "100%", label: "com certificado" },
-];
+export const STATS = [];
 
 export const PILLARS = [
   "Conteúdo técnico aplicado ao canteiro",
   "Networking com empresas e profissionais",
   "Prática em campo com visitas técnicas",
-  "Publicação nos anais do congresso",
+  "Troca de conhecimento e experiências",
 ];
 
 export const SPEAKERS = [];
