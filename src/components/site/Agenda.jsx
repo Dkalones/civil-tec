@@ -26,14 +26,14 @@ export default function Agenda() {
         <SectionHeading
           index="04"
           eyebrow="Programação"
-          title="Cinco dias, quatro trilhas, um campus."
-          description="Palestras pela manhã, minicursos à tarde, visitas técnicas e competições. Filtre por dia e por tipo de atividade."
+          title="Quatro dias de encontro e conhecimento."
+          description="A programação completa, com horários e atividades, será divulgada em breve."
         />
 
         <div
           role="tablist"
           aria-label="Dias do congresso"
-          className="mt-10 grid grid-cols-5 border border-ink/15"
+          className="mt-10 grid grid-cols-4 border border-ink/15"
         >
           {AGENDA_DAYS.map((d) => {
             const active = d.id === day;
@@ -88,7 +88,7 @@ export default function Agenda() {
         <div className="mt-8 border-t border-ink/15">
           {items.length === 0 && (
             <p className="py-12 text-center text-[15px] text-ink/50">
-              Nenhuma atividade deste tipo neste dia.
+              Programação em breve. As atividades e os horários serão publicados aqui.
             </p>
           )}
 
@@ -127,13 +127,13 @@ export default function Agenda() {
 
         <div className="mt-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="max-w-lg font-mono text-[10.5px] uppercase leading-relaxed tracking-[0.12em] text-ink/40">
-            Programação sujeita a ajustes · vagas de minicurso por ordem de chegada
+            Programação detalhada em preparação.
           </p>
           <Link
             to="/inscricao"
             className="font-heading text-[12px] font-bold uppercase tracking-[0.12em] text-ink underline decoration-signal decoration-2 underline-offset-4 transition hover:text-ink/60"
           >
-            Garantir vaga na programação
+            Acompanhar programação
           </Link>
         </div>
       </div>
