@@ -57,6 +57,7 @@ export default function About() {
           </figure>
         </div>
 
+        {STATS.length > 0 && (
         <dl className="mt-16 grid grid-cols-2 border-t border-ink/15 md:grid-cols-4">
           {STATS.map((s, i) => (
             <div
@@ -72,6 +73,7 @@ export default function About() {
             </div>
           ))}
         </dl>
+        )}
       </div>
     </section>
   );
