@@ -17,8 +17,8 @@ export default function About() {
           <div className="lg:col-span-6">
             <div className="space-y-5 text-[16.5px] leading-relaxed text-ink/75">
               <p>
-                O congresso é organizado pelo CORTEC, no Centro de Ciências e Tecnologia
-                Agroalimentar da UEPB, em Pombal. A proposta é tirar o debate técnico do
+                O congresso é organizado pelo CiviTec, no Campus VIII da UEPB — Centro de Ciências,
+                Tecnologia e Saúde (CCTS), em Araruna. A proposta é tirar o debate técnico do
                 abstrato: cada tema chega com aplicação real, dados de obra e espaço para
                 perguntas.
               </p>
