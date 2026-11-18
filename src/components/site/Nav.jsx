@@ -42,15 +42,11 @@ export default function Nav() {
     >
       <div className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="CivilTec — página inicial">
-          <span className="grid h-8 w-8 place-items-center bg-signal font-heading text-[13px] font-extrabold text-ink">
-            CT
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-heading text-[17px] font-extrabold uppercase tracking-tight text-ink-foreground">
-              CivilTec
-            </span>
-            <span className="label-mono mt-1 text-ink-foreground/45">UEPB · Araruna</span>
-          </span>
+          <img
+            src="/brand/civiltec-logo.svg"
+            alt="CivilTec — Congresso Regional de Engenharia Civil"
+            className="h-10 w-auto max-w-[190px] object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
