@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink-foreground/75">
-            Cinco dias de palestras, minicursos, visitas técnicas e competições com quem
+            Quatro dias de palestras, encontros e troca de conhecimento para quem
             está reinventando a engenharia civil no Brasil.
           </p>
 
