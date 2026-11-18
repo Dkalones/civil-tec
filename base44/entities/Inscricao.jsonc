@@ -1,0 +1,91 @@
+{
+  "name": "Inscricao",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "title": "Nome completo"
+    },
+    "email": {
+      "type": "string",
+      "title": "E-mail"
+    },
+    "cpf": {
+      "type": "string",
+      "title": "CPF"
+    },
+    "categoria": {
+      "type": "string",
+      "title": "Categoria",
+      "enum": [
+        "Estudante",
+        "Estudante + Minicurso",
+        "Profissional"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "purple"
+      ]
+    },
+    "instituicao": {
+      "type": "string",
+      "title": "Institui\u00e7\u00e3o"
+    },
+    "lote": {
+      "type": "string",
+      "title": "Lote"
+    },
+    "valor": {
+      "type": "number",
+      "title": "Valor (R$)"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Pendente",
+        "Confirmada",
+        "Cancelada"
+      ],
+      "enumColors": [
+        "yellow",
+        "green",
+        "red"
+      ],
+      "default": "Pendente"
+    }
+  },
+  "required": [
+    "nome",
+    "email",
+    "cpf",
+    "categoria",
+    "instituicao"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
