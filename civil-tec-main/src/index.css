@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paleta CivilTec */
+    --background: 48 33% 97%; /* #FAF9F5 */
+    --foreground: 60 5% 9%; /* #171715 */
+    --card: 42 33% 99%;
+    --card-foreground: 60 5% 9%;
+    --popover: 42 33% 99%;
+    --popover-foreground: 60 5% 9%;
+    --primary: 45 82% 53%; /* #E9B927 */
+    --primary-foreground: 60 5% 9%;
+    --secondary: 44 19% 89%; /* #E8E5DD */
+    --secondary-foreground: 60 5% 9%;
+    --muted: 44 19% 89%;
+    --muted-foreground: 60 4% 32%;
+    --accent: 45 82% 53%;
+    --accent-foreground: 60 5% 9%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 44 14% 84%;
+    --input: 44 14% 84%;
+    --ring: 45 82% 53%;
+
+    --ink: 60 5% 9%;
+    --ink-foreground: 48 33% 97%;
+    --concrete: 44 19% 89%;
+    --signal: 45 82% 53%;
+
+    --radius: 0.15rem;
+    --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --sidebar-background: 48 33% 97%;
+    --sidebar-foreground: 60 5% 9%;
+    --sidebar-primary: 60 5% 9%;
+    --sidebar-primary-foreground: 48 33% 97%;
+    --sidebar-accent: 44 19% 89%;
+    --sidebar-accent-foreground: 60 5% 9%;
+    --sidebar-border: 44 14% 84%;
+    --sidebar-ring: 45 82% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--signal));
+    color: hsl(var(--ink));
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 92px;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--signal));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Malha técnica de planta de obra */
+  .blueprint-grid {
+    background-image: linear-gradient(to right, hsl(var(--ink) / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--ink) / 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .blueprint-grid-dark {
+    background-image: linear-gradient(to right, hsl(var(--ink-foreground) / 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--ink-foreground) / 0.09) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .notch {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  }
+
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+  }
+}

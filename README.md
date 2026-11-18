@@ -1,20 +1,20 @@
 # CivilTec — Congresso Regional de Engenharia Civil
 
-Site institucional do CivilTec, com informações do evento, programação, palestrantes, inscrições e submissão de trabalhos.
+Site institucional do CivilTec, desenvolvido em React e Vite.
 
-## Stack
+## Tecnologias
 
-- React 19 e JavaScript
-- TanStack Start e TanStack Router
+- React 19
 - Vite 8
+- TanStack Router
 - Tailwind CSS 3
-- Nitro (preset Vercel) para execução SSR
+
+O projeto funciona como uma aplicação web estática (SPA). Não depende de Base44, Cloudflare Workers, SSR ou serviços proprietários para compilar e servir as páginas públicas.
 
 ## Requisitos
 
-- Node.js 22.12 ou superior (recomendado)
+- Node.js 22
 - npm 10 ou superior
-- Acesso ao projeto Base44 para habilitar persistência, autenticação e publicação
 
 ## Desenvolvimento local
 
@@ -23,22 +23,27 @@ npm install
 npm run dev
 ```
 
-Para testar os recursos conectados ao Base44, vincule o projeto à aplicação correta usando a CLI e configure as credenciais/variáveis exigidas pelo ambiente. Sem o backend Base44, as páginas públicas podem ser visualizadas, mas inscrições e submissões não serão persistidas.
-
-## Verificações
+## Build de produção
 
 ```bash
-npm run lint
 npm run build
+npm run preview
 ```
 
-## Publicação (Vercel)
+Os arquivos prontos para publicação são gerados na pasta `dist/`.
 
-Importe o repositório na Vercel. O framework é detectado automaticamente (build: `npm run build`); o Nitro gera a saída em `.vercel/output`. Não é necessário configurar mais nada.
+## Publicação na Vercel
 
-Observação: inscrições e submissões ainda não são persistidas (os formulários mostram a mensagem de erro de "serviço não conectado"). Conecte um banco ou serviço de e-mail via server functions para ativar.
+Importe o repositório e use estas configurações:
 
-## Observações
+- Framework Preset: **Vite**
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Node.js: **22**
 
-- Os canais oficiais de e-mail e WhatsApp estão temporariamente como placeholders até a organização confirmar os contatos.
-- Antes de divulgar a programação, confirme a sala do minicurso “Membranas de Alta Performance para Impermeabilização”: há conflito de sala no Dia 1, das 13h às 17h, com outro minicurso listado na Sala de Aula.
+O arquivo `vercel.json` já contém o rewrite necessário para que as rotas da aplicação (`/inscricao`, `/submissao` e `/privacidade`) funcionem ao abrir ou atualizar diretamente a URL.
+
+## Formulários
+
+As páginas de inscrição e submissão permanecem disponíveis visualmente, mas o envio está explicitamente desabilitado até que a organização defina e conecte um serviço oficial de recebimento e armazenamento. O site não exibe confirmação falsa nem afirma que dados foram enviados.

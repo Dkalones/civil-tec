@@ -1,23 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { EVENT } from "@/lib/event-data";
-
-export const Route = createFileRoute("/privacidade")({
-  head: () => ({
-    meta: [
-      { title: "Política de privacidade · CivilTec" },
-      {
-        name: "description",
-        content:
-          "Como o CivilTec trata os dados de inscrição, submissão de trabalhos e contato, conforme a LGPD.",
-      },
-      { property: "og:title", content: "Política de privacidade · CivilTec" },
-      { property: "og:type", content: "website" },
-    ],
-  }),
-  component: Page,
-});
 
 const BLOCKS = [
   {
@@ -86,3 +69,5 @@ function Page() {
     </div>
   );
 }
+
+export default Page;

@@ -1,15 +1,5 @@
-const db = globalThis.__B44_DB__ || {
-  entities: new Proxy({}, {
-    get: () => ({
-      create: async () => {
-        throw new Error("O serviço de inscrições ainda não está conectado.");
-      },
-    }),
-  }),
-};
-
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, MessageCircle, Loader2 } from "lucide-react";
 
 import Nav from "@/components/site/Nav";
@@ -17,25 +7,6 @@ import Footer from "@/components/site/Footer";
 import { TICKETS, EVENT } from "@/lib/event-data";
 import { btnPrimary, btnGhostLight, fieldClass } from "@/components/site/styles";
 import { cn } from "@/lib/utils";
-
-export const Route = createFileRoute("/inscricao")({
-  validateSearch: (search) => ({
-    categoria: typeof search.categoria === "string" ? search.categoria : undefined,
-  }),
-  head: () => ({
-    meta: [
-      { title: "Inscrição · CivilTec" },
-      {
-        name: "description",
-        content:
-          "Garanta sua vaga no CivilTec: escolha o plano, informe seus dados e receba as instruções de pagamento.",
-      },
-      { property: "og:title", content: "Inscrição · CivilTec" },
-      { property: "og:type", content: "website" },
-    ],
-  }),
-  component: Page,
-});
 
 const onlyDigits = (v) => v.replace(/\D/g, "");
 
@@ -67,7 +38,7 @@ function Field({ label, htmlFor, error, children, hint }) {
 }
 
 function Page() {
-  const { categoria } = Route.useSearch();
+  const categoria = new URLSearchParams(window.location.search).get("categoria");
   const initialPlan = TICKETS.some((t) => t.id === categoria) ? categoria : TICKETS[1].id;
 
   const [planId, setPlanId] = useState(initialPlan);
@@ -97,32 +68,11 @@ function Page() {
     return Object.keys(next).length === 0;
   };
 
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    setSubmitError("");
-    if (!validate()) return;
-
-    setSubmitting(true);
-    try {
-      const created = await db.entities.Inscricao.create({
-        nome: form.nome.trim(),
-        email: form.email.trim().toLowerCase(),
-        cpf: form.cpf,
-        categoria: plan.name,
-        instituicao: form.instituicao.trim(),
-        lote: plan.lote,
-        valor: plan.price,
-        status: "Pendente",
-      });
-      setDone({ ...created, plano: plan.name, valor: plan.price, email: form.email.trim() });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      setSubmitError(
-        "Não conseguimos registrar sua inscrição agora. Tente novamente mais tarde; os canais oficiais de contato serão divulgados em breve.",
-      );
-    } finally {
-      setSubmitting(false);
-    }
+    setSubmitError(
+      "As inscrições ainda não estão abertas neste site. Os canais oficiais de inscrição e pagamento serão divulgados pela organização. Nenhum dado foi enviado ou armazenado.",
+    );
   };
 
   return (
@@ -397,3 +347,5 @@ function Page() {
     </div>
   );
 }
+
+export default Page;

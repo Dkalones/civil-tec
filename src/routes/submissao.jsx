@@ -1,15 +1,5 @@
-const db = globalThis.__B44_DB__ || {
-  entities: new Proxy({}, {
-    get: () => ({
-      create: async () => {
-        throw new Error("O serviço de submissões ainda não está conectado.");
-      },
-    }),
-  }),
-};
-
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Download, Loader2 } from "lucide-react";
 
 import Nav from "@/components/site/Nav";
@@ -22,22 +12,6 @@ import {
 } from "@/lib/event-data";
 import { btnPrimary, btnGhostLight, fieldClass } from "@/components/site/styles";
 import { cn } from "@/lib/utils";
-
-export const Route = createFileRoute("/submissao")({
-  head: () => ({
-    meta: [
-      { title: "Submissão de trabalhos · CivilTec" },
-      {
-        name: "description",
-        content:
-          "Envie seu resumo para os anais do CivilTec. Confira prazos, normas de formatação e eixos temáticos.",
-      },
-      { property: "og:title", content: "Submissão de trabalhos · CivilTec" },
-      { property: "og:type", content: "website" },
-    ],
-  }),
-  component: Page,
-});
 
 function downloadRules() {
   const text = [
@@ -92,30 +66,11 @@ function Page() {
     return Object.keys(next).length === 0;
   };
 
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    setSubmitError("");
-    if (!validate()) return;
-
-    setSubmitting(true);
-    try {
-      const created = await db.entities.Submissao.create({
-        titulo: form.titulo.trim(),
-        autores: form.autores.trim(),
-        email: form.email.trim().toLowerCase(),
-        area: form.area,
-        resumo: form.resumo.trim(),
-        status: "Recebido",
-      });
-      setDone({ ...created, titulo: form.titulo.trim(), email: form.email.trim() });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      setSubmitError(
-        "Não conseguimos registrar sua submissão agora. Tente novamente em instantes.",
-      );
-    } finally {
-      setSubmitting(false);
-    }
+    setSubmitError(
+      "O recebimento de trabalhos ainda não está habilitado neste site. A comissão científica divulgará o canal oficial em breve. Nenhum dado ou arquivo foi enviado.",
+    );
   };
 
   return (
@@ -367,3 +322,5 @@ function Page() {
     </div>
   );
 }
+
+export default Page;
