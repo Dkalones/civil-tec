@@ -48,7 +48,7 @@ export default function Nav() {
             <span className="font-heading text-[17px] font-extrabold uppercase tracking-tight text-ink-foreground">
               CivilTec
             </span>
-            <span className="label-mono mt-1 text-ink-foreground/45">UEPB · Pombal</span>
+            <span className="label-mono mt-1 text-ink-foreground/45">UEPB · Araruna</span>
           </span>
         </Link>
 
