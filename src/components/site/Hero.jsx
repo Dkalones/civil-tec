@@ -67,12 +67,12 @@ export default function Hero() {
         <aside className="hidden flex-col justify-end gap-6 border-l border-ink-foreground/10 pl-6 lg:flex">
           <div>
             <p className="label-mono text-ink-foreground/40">Realização</p>
-            <p className="mt-1 text-sm text-ink-foreground/80">CORTEC · CCTA/UEPB</p>
+            <p className="mt-1 text-sm text-ink-foreground/80">CiviTec · UEPB (CCTS)</p>
           </div>
           <div>
             <p className="label-mono text-ink-foreground/40">Coordenadas</p>
             <p className="mt-1 font-mono text-sm text-ink-foreground/80">
-              6.7703 S · 37.8006 W
+              6.5352 S · 35.7325 W
             </p>
           </div>
           <div>
