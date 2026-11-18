@@ -15,9 +15,9 @@ export const EVENT = {
   whatsapp: null,
   whatsappUrl: null,
   issn: "2965-789X",
-  map: { lat: -6.7703, lng: -37.8006 },
+  map: { lat: -6.535202, lng: -35.7324759 },
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Rua+Jairo+Vieira+Feitosa+1770+Pombal+PB",
+    "https://www.google.com/maps/search/?api=1&query=Av.+Cel.+Pedro+Targino%2C+s%2Fn%2C+Centro%2C+Araruna+-+PB%2C+58233-000",
   images: {
     hero: "https://media.db.com/images/public/6afdc4a9cf978caf479dc410/507689db9_generated_82f0fc1d.png",
     concrete:
@@ -185,7 +185,7 @@ export const AGENDA = [
   { day: "dia-1", time: "13h — 17h", title: "Dimensionamento de Sistemas de Esgotamento Sanitário", type: "minicurso", typeLabel: "Minicurso", who: "Rodrigo Santos", room: "Mini Auditório" },
   { day: "dia-1", time: "13h — 17h", title: "Agindo com Segurança: Do Combate ao Fogo ao Atendimento às Vítimas", type: "minicurso", typeLabel: "Minicurso", who: "Jardel Leite · CBMPB", room: "Sala de Aula" },
   { day: "dia-1", time: "13h — 17h", title: "Fundamentos da Construção com Terra", type: "minicurso", typeLabel: "Minicurso", who: "Normando Perazzo · UFCG", room: "Lab. de Geotecnia" },
-  { day: "dia-1", time: "17h", title: "Competição de Realidade Aumentada", type: "competicao", typeLabel: "Competição", who: "Equipes inscritas", room: "CCTA" },
+  { day: "dia-1", time: "17h", title: "Competição de Realidade Aumentada", type: "competicao", typeLabel: "Competição", who: "Equipes inscritas", room: "Campus VIII" },
   { day: "dia-1", time: "19h", title: "Noite da Pizza", type: "social", typeLabel: "Social", who: "Integração dos participantes", room: "Área de convivência" },
 
   // Dia 2
@@ -200,7 +200,7 @@ export const AGENDA = [
   { day: "dia-2", time: "13h — 17h", title: "Oficina de Engenharia de Prompt com IA Generativa", type: "minicurso", typeLabel: "Minicurso", who: "Eliane & Leandro", room: "Laboratório 1" },
   { day: "dia-2", time: "13h — 17h", title: "Oficina de Acessibilidade na Prática", type: "minicurso", typeLabel: "Minicurso", who: "Tio Géra", room: "Sala de Aula" },
   { day: "dia-2", time: "13h — 17h", title: "Aerolevantamento LiDAR", type: "minicurso", typeLabel: "Minicurso", who: "Matheus Vieira", room: "Em campo" },
-  { day: "dia-2", time: "13h30 — 17h30", title: "Visita técnica: Museu e Mina Escola", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do CCTA" },
+  { day: "dia-2", time: "13h30 — 17h30", title: "Visita técnica: Museu e Mina Escola", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do Campus VIII" },
   { day: "dia-2", time: "19h", title: "Noite dos Jogos", type: "social", typeLabel: "Social", who: "Times e duplas", room: "Área de convivência" },
 
   // Dia 3
@@ -214,7 +214,7 @@ export const AGENDA = [
   { day: "dia-3", time: "13h — 17h", title: "A Importância da Prevenção Contra Incêndios no Projeto", type: "minicurso", typeLabel: "Minicurso", who: "João Carlos", room: "Mini Auditório" },
   { day: "dia-3", time: "13h — 17h", title: "Ferramentas Digitais para Realidade Virtual em Obras e Projetos", type: "minicurso", typeLabel: "Minicurso", who: "Heber de Paula", room: "Laboratório 1" },
   { day: "dia-3", time: "13h — 17h", title: "Argamassas Estabilizadas e Autonivelantes: Critérios Normativos", type: "minicurso", typeLabel: "Minicurso", who: "Aline · RejuntaMix", room: "Lab. de Materiais" },
-  { day: "dia-3", time: "13h30 — 17h30", title: "Visita técnica: Santuário do Pai Todo-Poderoso", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do CCTA" },
+  { day: "dia-3", time: "13h30 — 17h30", title: "Visita técnica: Santuário do Pai Todo-Poderoso", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do Campus VIII" },
   { day: "dia-3", time: "19h", title: "Noite do Karaokê", type: "social", typeLabel: "Social", who: "Microfone aberto", room: "Área de convivência" },
 
   // Dia 4
@@ -230,7 +230,7 @@ export const AGENDA = [
   { day: "dia-4", time: "19h", title: "Noite do São João Fora de Época", type: "social", typeLabel: "Social", who: "Forró e comidas típicas", room: "Área de convivência" },
 
   // Dia 5
-  { day: "dia-5", time: "08h — 09h30", title: "Visita técnica: Parque dos Dinossauros", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do CCTA" },
+  { day: "dia-5", time: "08h — 09h30", title: "Visita técnica: Parque dos Dinossauros", type: "visita", typeLabel: "Visita técnica", who: "Grupo de 40 vagas", room: "Saída do Campus VIII" },
   { day: "dia-5", time: "09h — 11h", title: "Apresentação de artigos aprovados", type: "palestra", typeLabel: "Apresentação", who: "Autores dos trabalhos", room: "Auditório" },
   { day: "dia-5", time: "11h", title: "Premiação das competições e encerramento", type: "social", typeLabel: "Encerramento", who: "Comissão organizadora", room: "Auditório" },
 ];
@@ -325,7 +325,7 @@ export const FAQ = [
   },
   {
     q: "Como funciona o credenciamento?",
-    a: "O credenciamento abre uma hora antes da primeira atividade de cada dia, na entrada do CCTA. Leve um documento com foto e o comprovante de inscrição.",
+    a: "O credenciamento abre uma hora antes da primeira atividade de cada dia, na entrada do Campus VIII. Leve um documento com foto e o comprovante de inscrição.",
   },
   {
     q: "As vagas de minicurso são garantidas?",
@@ -347,14 +347,14 @@ export const SPONSOR_TIERS = [
 export const VENUE_TIPS = [
   {
     title: "De carro",
-    text: "Acesso pela BR-230, saída para o centro de Pombal. Há estacionamento gratuito no campus durante o evento.",
+    text: "Acesso pela BR-230, saída para o centro de Araruna. Há estacionamento gratuito no campus durante o evento.",
   },
   {
     title: "De ônibus",
-    text: "O terminal rodoviário de Pombal fica a 10 minutos do campus. Linhas urbanas passam na entrada do CCTA.",
+    text: "O terminal rodoviário de Araruna fica a 10 minutos do campus. Linhas urbanas passam na entrada do Campus VIII.",
   },
   {
     title: "De avião",
-    text: "Os aeroportos mais próximos são Campina Grande e João Pessoa, com traslado rodoviário até Pombal.",
+    text: "Os aeroportos mais próximos são Campina Grande e João Pessoa, com traslado rodoviário até Araruna.",
   },
 ];
