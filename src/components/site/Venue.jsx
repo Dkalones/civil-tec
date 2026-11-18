@@ -14,8 +14,8 @@ export default function Venue() {
         <SectionHeading
           index="07"
           eyebrow="Local e hospedagem"
-          title="No coração do sertão da Paraíba."
-          description="O congresso acontece no Campus Pombal da UEPB, com auditórios, laboratórios e área de convivência no mesmo terreno."
+          title="No agreste paraibano."
+          description="O congresso acontece no Campus VIII da UEPB — Prof.ª Maria da Penha (CCTS), em Araruna."
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
@@ -27,7 +27,7 @@ export default function Venue() {
                 </Suspense>
               </ClientOnly>
               <span className="label-mono pointer-events-none absolute left-3 top-3 z-[500] bg-ink px-2 py-1 text-ink-foreground/80">
-                CCTA · UEPB
+                Campus VIII · UEPB
               </span>
             </div>
 
