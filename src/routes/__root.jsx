@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Cinco dias de palestras, minicursos, visitas técnicas e competições no CCTA/UEPB, em Pombal — PB.",
+          "Cinco dias de palestras, minicursos, visitas técnicas e competições no Campus VIII da UEPB, em Araruna — PB.",
       },
       { name: "theme-color", content: "#171715" },
     ],
