@@ -8,8 +8,7 @@ Site institucional do CivilTec, com informações do evento, programação, pale
 - TanStack Start e TanStack Router
 - Vite 8
 - Tailwind CSS 3
-- Base44 SDK e entidades para inscrições e submissões
-- Cloudflare Workers para execução SSR
+- Nitro (preset Vercel) para execução SSR
 
 ## Requisitos
 
@@ -33,9 +32,11 @@ npm run lint
 npm run build
 ```
 
-## Publicação
+## Publicação (Vercel)
 
-Este projeto usa TanStack Start com renderização no servidor e Cloudflare Workers. Não é um site estático convencional: GitHub Pages, por si só, não executa o servidor SSR nem as funções do backend. Publique pelo fluxo Base44/Cloudflare configurado para o projeto.
+Importe o repositório na Vercel. O framework é detectado automaticamente (build: `npm run build`); o Nitro gera a saída em `.vercel/output`. Não é necessário configurar mais nada.
+
+Observação: inscrições e submissões ainda não são persistidas (os formulários mostram a mensagem de erro de "serviço não conectado"). Conecte um banco ou serviço de e-mail via server functions para ativar.
 
 ## Observações
 
