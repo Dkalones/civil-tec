@@ -35,9 +35,9 @@ export default function Nav() {
         <Link to="/" className="flex items-center" aria-label="CivilTec — página inicial">
           <img src="/brand/civiltec-logo.svg" alt="CivilTec" className="h-[48px] w-auto max-w-[76px] object-contain"/>
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {LINKS.map((l) => (
-            <Link key={l.hash} to="/" hash={l.hash} className="font-mono text-[8px] font-semibold uppercase tracking-[.18em] text-white/70 transition hover:text-[#efbd20]">
+            <Link key={l.hash} to="/" hash={l.hash} className="whitespace-nowrap font-mono text-[11px] font-semibold uppercase tracking-[.13em] text-white/80 transition hover:text-[#efbd20] xl:text-[12px]">
               {l.label}
             </Link>
           ))}
