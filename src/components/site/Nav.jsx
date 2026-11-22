@@ -40,7 +40,7 @@ export default function Nav() {
           : "border-transparent bg-ink/70 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8">
+      <div className="mx-auto flex h-[60px] w-full max-w-[1000px] items-center justify-between gap-6 px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="CivilTec — página inicial">
           <img
             src="/brand/civiltec-logo.svg"
@@ -49,13 +49,13 @@ export default function Nav() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {LINKS.map((l) => (
             <Link
               key={l.hash}
               to="/"
               hash={l.hash}
-              className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-foreground/70 transition hover:text-signal"
+              className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-foreground/70 transition hover:text-signal"
             >
               {l.label}
             </Link>
@@ -63,7 +63,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link to="/inscricao" className={`${btnPrimary} hidden sm:inline-flex`}>
+          <Link to="/inscricao" className={`${btnPrimary} hidden !px-6 !py-3 text-[12px] sm:inline-flex`}>
             Inscreva-se
           </Link>
           <button
