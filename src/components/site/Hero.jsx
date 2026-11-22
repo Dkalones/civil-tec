@@ -175,11 +175,6 @@ export default function Hero() {
         <div className="ct-hero-art">
           <BuildingBlueprint />
           <SideDetails />
-          <svg className="ct-bottom-ornament" viewBox="0 0 390 90" fill="none" aria-hidden="true">
-            <path d="M0 40h105l24-18h140l22 18h99M15 70h80l28-20h160l24 20h65" stroke="#F5BE1F" strokeWidth="1.5" opacity=".7" />
-            <path d="M8 78h90l18-14h150l16 14h90" stroke="#F5BE1F" strokeWidth="4" strokeDasharray="12 5" opacity=".65" />
-            <path d="m365 31 10 9-10 9-10-9 10-9Z" fill="#F5BE1F" />
-          </svg>
         </div>
       </div>
     </section>
