@@ -511,10 +511,10 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background-color: #292b2a !important;
+  background-color: #222423 !important;
   background-image:
-    radial-gradient(ellipse 72% 58% at 73% 88%, rgba(190, 192, 190, .22) 0%, rgba(150, 153, 151, .12) 42%, transparent 76%),
-    linear-gradient(180deg, #171817 0%, #202221 48%, #343736 100%) !important;
+    radial-gradient(ellipse 72% 58% at 73% 88%, rgba(155, 158, 156, .15) 0%, rgba(125, 128, 126, .08) 42%, transparent 76%),
+    linear-gradient(180deg, #141514 0%, #1b1d1c 48%, #292c2a 100%) !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -525,11 +525,11 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: .82;
+  opacity: .64;
   background-image:
-    linear-gradient(rgba(218, 222, 219, .075) 1px, transparent 1px),
+    linear-gradient(rgba(218, 222, 219, .058) 1px, transparent 1px),
     linear-gradient(90deg, rgba(218, 222, 219, .075) 1px, transparent 1px),
-    radial-gradient(circle, rgba(226, 229, 226, .22) 1px, transparent 1.7px);
+    radial-gradient(circle, rgba(226, 229, 226, .16) 1px, transparent 1.7px);
   background-size: 60px 60px, 60px 60px, 60px 60px;
   background-position: 0 0, 0 0, 0 0;
 }
