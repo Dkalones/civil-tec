@@ -86,19 +86,18 @@ export default function Hero() {
             Quatro dias de palestras, encontros e troca de conhecimento para quem está reinventando a engenharia civil no Brasil.
           </p>
 
-          <div className="mt-7 grid grid-cols-[1.08fr_1fr] gap-2.5">
-            <InfoCard icon={CalendarDays} label="Quando" className="min-h-[106px]">
-              <div className="grid grid-cols-[.9fr_1.1fr] items-center gap-2">
-                <div>
-                  <strong className="block font-heading text-[38px] font-black leading-none text-[#efbd20]">3–6</strong>
-                  <span className="mt-1 block text-[10px] font-semibold leading-tight">de maio de 2027</span>
-                </div>
-                <div className="grid grid-cols-2 gap-1">
-                  {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1 py-1 ${i===3?"border-[#efbd20] bg-[#efbd20] text-[#171815]":"border-white/15 bg-black/35"}`}><span className="block font-mono text-[7px] leading-none">{v.split("|")[0]}</span><b className="font-heading text-[17px] leading-none">{v.split("|")[1]}</b></div>)}
-                </div>
+          <div className="mt-7 grid grid-cols-[.82fr_.70fr_1.58fr] gap-2">
+            <InfoCard icon={CalendarDays} label="Quando" className="min-h-[106px] !p-3">
+              <strong className="block font-heading text-[38px] font-black leading-none text-[#efbd20]">3–6</strong>
+              <span className="mt-1 block text-[10px] font-semibold leading-tight">de maio de 2027</span>
+              <span className="mt-3 block border-t border-white/10 pt-2 font-mono text-[7px] uppercase tracking-[.12em] text-white/45">4 dias · edição 2027</span>
+            </InfoCard>
+            <InfoCard icon={CalendarDays} label="Calendário" className="min-h-[106px] !p-2">
+              <div className="grid grid-cols-2 gap-1">
+                {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1 py-1 ${i===3?"border-[#efbd20] bg-[#efbd20] text-[#171815]":"border-white/15 bg-black/35"}`}><span className="block font-mono text-[7px] leading-none">{v.split("|")[0]}</span><b className="font-heading text-[17px] leading-none">{v.split("|")[1]}</b></div>)}
               </div>
             </InfoCard>
-            <InfoCard icon={MapPin} label="Onde" className="min-h-[106px]">
+            <InfoCard icon={MapPin} label="Onde" className="min-h-[106px] !p-3">
               <p className="font-heading text-[17px] font-bold leading-tight">Campus VIII</p>
               <p className="mt-1 text-[9px] leading-tight text-[#efbd20]">Prof.ª Maria da Penha</p>
               <p className="text-[9px] text-white/65">CCTS / UEPB</p>
