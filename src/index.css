@@ -406,3 +406,43 @@
     opacity: .9;
   }
 }
+
+
+/* Final viewport fit: hero occupies the visible page area beneath the fixed header */
+@media (min-width: 1201px) {
+  .ct-hero {
+    min-height: 100svh;
+    height: 100svh;
+    box-sizing: border-box;
+  }
+  .ct-hero-inner {
+    min-height: 100svh;
+    height: 100svh;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 1201px) and (max-height: 900px) {
+  .ct-hero-copy {
+    gap: clamp(7px, 1.1vh, 12px);
+  }
+  .ct-hero-copy h1 {
+    font-size: clamp(42px, 3.45vw, 56px);
+    line-height: .9;
+  }
+  .ct-intro {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .ct-countdown-values b {
+    font-size: clamp(29px, 2.2vw, 35px);
+  }
+  .ct-hero-actions {
+    margin-top: 0;
+  }
+  .ct-cta-primary,
+  .ct-cta-secondary {
+    min-height: 48px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
