@@ -2,65 +2,41 @@ import { useEffect, useState } from "react";
 import { EVENT } from "@/lib/event-data";
 
 const TARGET = new Date(EVENT.startISO).getTime();
-const LAUNCH = TARGET - 1000 * 60 * 60 * 24 * 400;
-
+const START = new Date("2026-05-03T00:00:00-03:00").getTime();
 const pad = (n) => String(n).padStart(2, "0");
 
 export default function Countdown() {
-  const [left, setLeft] = useState(null);
-
+  const [now, setNow] = useState(Date.now());
   useEffect(() => {
-    const tick = () => setLeft(Math.max(0, TARGET - Date.now()));
-    tick();
-    const id = window.setInterval(tick, 1000);
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, []);
 
-  const parts = left === null
-    ? null
-    : {
-        d: Math.floor(left / 86400000),
-        h: Math.floor((left % 86400000) / 3600000),
-        m: Math.floor((left % 3600000) / 60000),
-        s: Math.floor((left % 60000) / 1000),
-      };
-
-  const progress = left === null
-    ? 0
-    : Math.min(100, Math.max(0, ((Date.now() - LAUNCH) / (TARGET - LAUNCH)) * 100));
-
-  const cells = [
-    { key: "dias", value: parts ? String(parts.d) : "--" },
-    { key: "horas", value: parts ? pad(parts.h) : "--" },
-    { key: "min", value: parts ? pad(parts.m) : "--" },
-    { key: "seg", value: parts ? pad(parts.s) : "--" },
-  ];
+  const left = Math.max(0, TARGET - now);
+  const days = Math.floor(left / 86400000);
+  const hours = Math.floor((left % 86400000) / 3600000);
+  const minutes = Math.floor((left % 3600000) / 60000);
+  const seconds = Math.floor((left % 60000) / 1000);
+  const progress = Math.min(100, Math.max(0, (1 - left / (TARGET - START)) * 100));
+  const progressWidth = progress + "%";
 
   return (
-    <div className="civiltec-countdown mt-7 max-w-[490px] border border-white/10 bg-[#171815]/75 p-4 backdrop-blur-sm sm:p-5">
-      <div className="flex items-center justify-between gap-4">
-        <p className="label-mono text-white/55">Contagem para a abertura</p>
-        <p className="label-mono text-signal">Linha do tempo</p>
-      </div>
-
-      <div className="mt-4 grid grid-cols-4 divide-x divide-white/12">
-        {cells.map((c) => (
-          <div key={c.key} className="px-2 first:pl-0 last:pr-0">
-            <p className="font-mono text-2xl font-medium tabular-nums text-white sm:text-[38px]">
-              {c.value}
-            </p>
-            <p className="label-mono mt-1 text-white/40">{c.key}</p>
-          </div>
+    <div className="ct-countdown">
+      <div className="ct-countdown-heading"><span>CONTAGEM PARA ABERTURA</span><strong>LINHA DO TEMPO</strong></div>
+      <div className="ct-countdown-values">
+        {[{ value: String(days), label: "DIAS" }, { value: pad(hours), label: "HORAS" }, { value: pad(minutes), label: "MIN" }, { value: pad(seconds), label: "SEG" }].map((item) => (
+          <div key={item.label}><b>{item.value}</b><span>{item.label}</span></div>
         ))}
       </div>
-
-      <div className="mt-4 h-[3px] w-full bg-white/15">
-        <div
-          className="h-full bg-signal transition-[width] duration-700 ease-out"
-          style={{ width: `${progress}%` }}
-        />
+      <div className="ct-progress" role="progressbar" aria-label="Progresso até a abertura" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(progress)}>
+        <span className="ct-progress-percent" style={{ left: Math.min(94, Math.max(6, progress)) + "%" }}>{Math.round(progress)}%</span>
+        <div className="ct-progress-ticks" />
+        <div className="ct-progress-fill" style={{ width: progressWidth }} />
+        <div className="ct-progress-marker" style={{ left: progressWidth }}><i /><b /></div>
+        <span className="ct-progress-start">03.05.26</span>
+        <span className="ct-progress-end">03.05.27 · ABERTURA</span>
       </div>
-      <p className="sr-only">Abertura em {EVENT.dateLabel}</p>
+      <span className="ct-corner" aria-hidden="true" />
     </div>
   );
 }
