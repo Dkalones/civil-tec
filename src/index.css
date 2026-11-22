@@ -493,3 +493,14 @@
   .ct-hero-art .ct-building-svg { right: -4px !important; top: 8px !important; }
   .ct-hero-art .ct-side-details { left: 0 !important; gap: 10px !important; }
 }
+
+/* Mais respiro entre os cards técnicos e distância maior em relação ao prédio */
+@media (min-width: 1201px) {
+  .ct-hero-art .ct-side-details { left: -58px !important; gap: 18px !important; }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-art .ct-side-details { left: -28px !important; gap: 15px !important; }
+}
+@media (max-width: 700px) {
+  .ct-hero-art .ct-side-details { left: 0 !important; gap: 12px !important; }
+}
