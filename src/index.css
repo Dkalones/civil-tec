@@ -504,3 +504,44 @@
 @media (max-width: 700px) {
   .ct-hero-art .ct-side-details { left: 0 !important; gap: 12px !important; }
 }
+
+
+/* Fundo blueprint cinza-grafite inspirado na referência visual */
+.ct-hero {
+  background-color: #202120 !important;
+  background-image:
+    radial-gradient(ellipse 62% 58% at 78% 88%, rgba(190, 190, 190, .22), transparent 72%),
+    radial-gradient(ellipse 54% 48% at 18% 72%, rgba(115, 117, 116, .13), transparent 74%),
+    linear-gradient(112deg, #171817 0%, #202120 48%, #303231 100%) !important;
+  background-size: auto, auto, auto !important;
+  background-position: center, center, center !important;
+}
+.ct-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .72;
+  background-image:
+    linear-gradient(rgba(225, 228, 225, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 228, 225, .075) 1px, transparent 1px),
+    linear-gradient(90deg, transparent 48%, rgba(225, 228, 225, .17) 49.5%, rgba(225, 228, 225, .17) 50.5%, transparent 52%),
+    linear-gradient(transparent 48%, rgba(225, 228, 225, .17) 49.5%, rgba(225, 228, 225, .17) 50.5%, transparent 52%);
+  background-size: 60px 60px, 60px 60px, 120px 120px, 120px 120px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+}
+.ct-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .62;
+  background-image:
+    repeating-linear-gradient(137deg, transparent 0 185px, rgba(220, 223, 220, .055) 186px, transparent 187px 330px),
+    radial-gradient(ellipse at 76% 65%, transparent 0 25%, rgba(220, 223, 220, .075) 25.08%, transparent 25.22%, transparent 39%, rgba(220, 223, 220, .055) 39.08%, transparent 39.22%);
+}
+.ct-hero-inner {
+  z-index: 1;
+}
