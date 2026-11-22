@@ -40,7 +40,7 @@ export default function Nav() {
           : "border-transparent bg-ink/70 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-[60px] w-full max-w-[1280px] items-center justify-between gap-6 px-5 sm:px-8">
+      <div className="mx-auto flex h-[60px] w-full max-w-[1000px] items-center justify-between gap-6 px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="CivilTec — página inicial">
           <img
             src="/brand/civiltec-logo.svg"
