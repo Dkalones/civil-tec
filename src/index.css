@@ -496,10 +496,10 @@
 
 /* Mais respiro entre os cards técnicos e distância maior em relação ao prédio */
 @media (min-width: 1201px) {
-  .ct-hero-art .ct-side-details { left: -82px !important; gap: 18px !important; }
+  .ct-hero-art .ct-side-details { left: -34px !important; gap: 18px !important; }
 }
 @media (min-width: 701px) and (max-width: 1200px) {
-  .ct-hero-art .ct-side-details { left: -42px !important; gap: 15px !important; }
+  .ct-hero-art .ct-side-details { left: -18px !important; gap: 15px !important; }
 }
 @media (max-width: 700px) {
   .ct-hero-art .ct-side-details { left: 0 !important; gap: 12px !important; }
