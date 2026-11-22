@@ -37,24 +37,24 @@ export default function Countdown() {
   ];
 
   return (
-    <div className="mt-8 max-w-xl border border-ink-foreground/15 bg-ink/50 p-4 backdrop-blur-sm sm:p-5">
+    <div className="civiltec-countdown mt-7 max-w-[490px] border border-white/10 bg-[#171815]/75 p-4 backdrop-blur-sm sm:p-5">
       <div className="flex items-center justify-between gap-4">
-        <p className="label-mono text-ink-foreground/55">Contagem para a abertura</p>
+        <p className="label-mono text-white/55">Contagem para a abertura</p>
         <p className="label-mono text-signal">Linha do tempo</p>
       </div>
 
-      <div className="mt-4 grid grid-cols-4 divide-x divide-ink-foreground/12">
+      <div className="mt-4 grid grid-cols-4 divide-x divide-white/12">
         {cells.map((c) => (
           <div key={c.key} className="px-2 first:pl-0 last:pr-0">
-            <p className="font-mono text-2xl font-medium tabular-nums text-ink-foreground sm:text-3xl">
+            <p className="font-mono text-2xl font-medium tabular-nums text-white sm:text-[38px]">
               {c.value}
             </p>
-            <p className="label-mono mt-1 text-ink-foreground/40">{c.key}</p>
+            <p className="label-mono mt-1 text-white/40">{c.key}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-4 h-[3px] w-full bg-ink-foreground/15">
+      <div className="mt-4 h-[3px] w-full bg-white/15">
         <div
           className="h-full bg-signal transition-[width] duration-700 ease-out"
           style={{ width: `${progress}%` }}
