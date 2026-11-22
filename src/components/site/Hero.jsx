@@ -137,8 +137,8 @@ export default function Hero() {
         </div>
 
         <div className="relative hidden h-[620px] lg:col-span-6 lg:block">
-          <div className="absolute right-[-110px] top-[-15px] h-[590px] w-[470px]"><BlueprintTower /></div>
-          <div className="absolute left-[5px] top-[280px] z-10 flex w-[140px] flex-col gap-3">
+          <div className="absolute left-[340px] top-[-15px] h-[590px] w-[470px]"><BlueprintTower /></div>
+          <div className="absolute left-[208px] top-[283px] z-10 flex w-[140px] flex-col gap-3">
             <div className="notch border-l-[3px] border-[#E9B927] bg-[#20211E]/95 p-2.5 shadow-xl backdrop-blur">
               <p className="label-mono text-[7px] text-white/45">Realização</p>
               <div className="mt-1 flex items-center gap-2">
