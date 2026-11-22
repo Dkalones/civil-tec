@@ -79,14 +79,22 @@ export default function Hero() {
               Quatro dias de palestras, encontros e troca de conhecimento para quem está reinventando a engenharia civil no Brasil.
             </p>
 
-            <div className="mt-6 grid max-w-[490px] grid-cols-[1.08fr_1fr] gap-2.5">
+            <div className="mt-6 grid max-w-[490px] grid-cols-[.82fr_.78fr_1.5fr] gap-2">
               <InfoCard icon={CalendarDays} label="Quando" className="min-h-[106px] !p-3">
-                <div className="grid grid-cols-[.9fr_1.1fr] items-center gap-2">
-                  <div><strong className="block font-heading text-[38px] font-black leading-none text-[#F2C400]">3–6</strong><span className="mt-1 block text-[10px] font-semibold leading-tight text-white">de maio de 2027</span></div>
-                  <div className="grid grid-cols-2 gap-1">
-                    {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1 py-1 ${i===3?"border-[#F2C400] bg-[#F2C400] text-black":"border-white/15 bg-black/40"}`}><span className="block font-mono text-[7px] leading-none">{v.split("|")[0]}</span><b className="font-heading text-[17px] leading-none">{v.split("|")[1]}</b></div>)}
-                  </div>
+                <strong className="block font-heading text-[38px] font-black leading-none text-[#F2C400]">3–6</strong>
+                <span className="mt-1 block text-[10px] font-semibold leading-tight text-white">de maio de 2027</span>
+                <span className="mt-3 block border-t border-white/10 pt-2 font-mono text-[7px] uppercase tracking-[.12em] text-white/45">4 dias · edição 2027</span>
+              </InfoCard>
+              <InfoCard icon={CalendarDays} label="Calendário" className="min-h-[106px] !p-2">
+                <div className="grid grid-cols-2 gap-1">
+                  {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1 py-1 ${i===3?"border-[#F2C400] bg-[#F2C400] text-black":"border-white/15 bg-black/40"}`}><span className="block font-mono text-[7px] leading-none">{v.split("|")[0]}</span><b className="font-heading text-[17px] leading-none">{v.split("|")[1]}</b></div>)}
                 </div>
+              </InfoCard>
+              <InfoCard icon={MapPin} label="Onde" className="min-h-[106px] !p-3">
+                <p className="font-heading text-[17px] font-bold leading-tight">Campus VIII</p>
+                <p className="mt-1 text-[10px] leading-tight text-[#F2C400]">Prof.ª Maria da Penha</p>
+                <p className="text-[10px] text-white/65">CCTS / UEPB</p>
+                <p className="mt-2 border-t border-white/10 pt-2 font-mono text-[7px] uppercase tracking-[.13em] text-white/50">Araruna · Paraíba</p>
               </InfoCard>
               <InfoCard icon={MapPin} label="Onde" className="min-h-[106px] !p-3">
                 <p className="font-heading text-xl font-bold">Campus VIII</p>
@@ -116,7 +124,7 @@ export default function Hero() {
             <div className="relative h-[440px] w-full max-w-[510px] sm:h-[560px] lg:h-[680px]">
               <ConstructionVisual />
             </div>
-            <div className="absolute bottom-4 left-0 z-10 hidden w-[175px] flex-col gap-3 sm:flex lg:left-[170px] lg:top-[285px] lg:bottom-auto">
+            <div className="absolute bottom-4 left-0 z-10 hidden w-[140px] flex-col gap-3 sm:flex lg:left-[218px] lg:top-[285px] lg:bottom-auto">
               <InfoCard icon={Crosshair} label="Coordenadas" className="p-3">
                 <p className="font-heading text-lg font-bold">6.5352° S</p><p className="font-heading text-lg font-bold">35.7325° W</p>
                 <p className="mt-1 font-mono text-[8px] uppercase text-white/50">Araruna · PB · Brasil</p>
@@ -126,13 +134,13 @@ export default function Hero() {
                 <p className="mt-1 font-mono text-[8px] uppercase text-white/50">Publicação científica</p>
               </InfoCard>
             </div>
-            <div className="absolute right-0 top-5 z-10 hidden w-[175px] flex-col gap-3 sm:flex lg:right-[-20px] lg:top-[285px]">
+            <div className="absolute right-0 top-5 z-10 hidden w-[140px] flex-col gap-3 sm:flex lg:left-[218px] lg:right-auto lg:top-[285px]">
               <InfoCard icon={Check} label="Realização" className="p-3">
                 <div className="flex items-center gap-2"><img src="/brand/civiltec-logo.svg" alt="CivilTec" className="h-8 w-auto max-w-[88px] object-contain" /><b className="font-heading text-xl text-[#F2C400]">2027</b></div>
                 <p className="mt-2 border-t border-white/10 pt-2 font-mono text-[9px] uppercase">UEPB · CCTS</p>
               </InfoCard>
             </div>
-            <div className="absolute bottom-0 right-4 z-10 hidden h-24 w-24 items-center justify-center rounded-full border border-[#F2C400] bg-black/90 p-2 text-center sm:flex lg:bottom-[-5px] lg:right-[-120px]">
+            <div className="absolute bottom-0 right-4 z-10 hidden h-24 w-24 items-center justify-center rounded-full border border-[#F2C400] bg-black/90 p-2 text-center sm:flex lg:bottom-[-5px] lg:left-[238px] lg:right-auto">
               <div className="flex h-full w-full flex-col items-center justify-center rounded-full border border-dashed border-[#F2C400]/60">
                 <Check className="h-7 w-7 rounded-full bg-[#F2C400] p-1 text-black" />
                 <span className="mt-1 font-mono text-[8px] uppercase tracking-widest text-[#F2C400]">2027</span>
@@ -140,7 +148,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="mt-5 border-t border-white/10 pt-3 font-mono text-[9px] uppercase tracking-[.2em] text-white/35 lg:mt-0">
+        <div className="mt-5 hidden border-t border-white/10 pt-3 font-mono text-[9px] uppercase tracking-[.2em] text-white/35 lg:mt-0">
           CivilTec 2027 <span className="mx-2 text-[#F2C400]">/</span> Engenharia, tecnologia e construção
         </div>
       </div>
