@@ -61,7 +61,7 @@ export default function Hero() {
     <section className="relative isolate min-h-screen overflow-hidden bg-black text-white">
       <div className="pointer-events-none absolute inset-0 opacity-35" style={{backgroundImage:"linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px)",backgroundSize:"42px 42px"}} />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_48%,rgba(242,196,0,.10),transparent_42%)]" />
-      <div className="relative mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-5 pb-8 pt-28 sm:px-8 lg:px-14 lg:pt-32">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-5 pb-8 pt-28 sm:px-8 lg:px-14 lg:pt-36">
         <div className="grid flex-1 items-center gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(420px,.92fr)] lg:gap-5">
           <div className="relative z-10 max-w-[760px]">
             <div className="mb-5 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.22em] text-white/55">
@@ -76,14 +76,17 @@ export default function Hero() {
               Quatro dias de palestras, encontros e troca de conhecimento para quem está reinventando a engenharia civil no Brasil.
             </p>
 
-            <div className="mt-6 grid max-w-[760px] grid-cols-1 gap-3 sm:grid-cols-[1fr_1fr] xl:grid-cols-[1.05fr_1.15fr]">
+            <div className="mt-6 grid max-w-[760px] grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-[.78fr_.92fr_1.35fr]">
               <InfoCard icon={CalendarDays} label="Quando" className="min-h-[132px]">
-                <div className="flex items-end gap-2">
+                <div className="flex h-full flex-col justify-center">
                   <strong className="font-heading text-5xl font-black leading-none text-[#F2C400]">3–6</strong>
-                  <span className="pb-1 text-xs text-white/75">de maio de 2027</span>
+                  <span className="mt-2 text-sm font-semibold text-white">de maio de 2027</span>
+                  <span className="mt-3 border-t border-white/10 pt-2 font-mono text-[8px] uppercase tracking-[.16em] text-white/45">Quatro dias de evento</span>
                 </div>
-                <div className="mt-3 grid grid-cols-4 gap-1">
-                  {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1.5 py-1 ${i===3?"border-[#F2C400] bg-[#F2C400] text-black":"border-white/15 bg-black/40"}`}><span className="block font-mono text-[8px]">{v.split("|")[0]}</span><b className="font-heading text-lg">{v.split("|")[1]}</b></div>)}
+              </InfoCard>
+              <InfoCard icon={CalendarDays} label="Calendário" className="min-h-[132px]">
+                <div className="grid grid-cols-2 gap-1.5">
+                  {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-2 py-1.5 ${i===3?"border-[#F2C400] bg-[#F2C400] text-black":"border-white/15 bg-black/40"}`}><span className="block font-mono text-[8px]">{v.split("|")[0]}</span><b className="font-heading text-xl leading-none">{v.split("|")[1]}</b></div>)}
                 </div>
               </InfoCard>
               <InfoCard icon={MapPin} label="Onde" className="min-h-[132px]">
