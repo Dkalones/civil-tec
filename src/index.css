@@ -479,3 +479,17 @@
     gap: 10px;
   }
 }
+
+/* Mantém o afastamento dos cards laterais e do edifício após alterações no Hero */
+@media (min-width: 1201px) {
+  .ct-hero-art .ct-building-svg { right: -16px !important; top: 16px !important; }
+  .ct-hero-art .ct-side-details { left: -26px !important; gap: 12px !important; }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-art .ct-building-svg { right: -8px !important; top: 14px !important; }
+  .ct-hero-art .ct-side-details { left: -12px !important; gap: 11px !important; }
+}
+@media (max-width: 700px) {
+  .ct-hero-art .ct-building-svg { right: -4px !important; top: 8px !important; }
+  .ct-hero-art .ct-side-details { left: 0 !important; gap: 10px !important; }
+}
