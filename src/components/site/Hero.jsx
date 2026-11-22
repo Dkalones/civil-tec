@@ -120,7 +120,7 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-25" aria-hidden="true" style={{backgroundImage:"radial-gradient(ellipse at 77% 50%, rgba(233,185,39,.08), transparent 44%), linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,.025) 48.1%, transparent 48.3%)"}} />
       <div className="absolute inset-0 bg-gradient-to-r from-[#171815] via-[#171815]/95 to-[#171815]/35" aria-hidden="true" />
 
-      <div className="relative mx-auto min-h-[800px] w-full max-w-[1280px] px-5 pb-10 pt-[122px] sm:px-8 lg:min-h-[100svh] lg:px-0">
+      <div className="relative mx-auto min-h-[800px] w-full max-w-[1280px] px-5 pb-10 pt-[194px] sm:px-8 lg:min-h-[100svh] lg:px-0">
         <div className="relative z-10 w-full max-w-[490px]">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <span className="label-mono bg-[#E9B927] px-2 py-1 text-[#171815]">[ 01 ]</span>
@@ -128,7 +128,7 @@ export default function Hero() {
             <span className="label-mono text-white/30">/</span>
             <span className="label-mono text-[8px] text-white/55 sm:text-[9px]">{EVENT.editionLabel}</span>
           </div>
-          <h1 className="mt-6 font-heading text-[clamp(3.1rem,4.35vw,4.35rem)] font-extrabold uppercase leading-[.91] tracking-[-.06em]">
+          <h1 className="mt-8 font-heading text-[clamp(3.1rem,4.35vw,4.35rem)] font-extrabold uppercase leading-[.91] tracking-[-.06em]">
             <span className="block whitespace-nowrap">O futuro da</span>
             <span className="block whitespace-nowrap">construção <span className="text-[#E9B927]">se</span></span>
             <span className="block whitespace-nowrap text-[#E9B927]">projeta aqui</span>
@@ -157,10 +157,10 @@ export default function Hero() {
         </div>
 
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
-          <div className="absolute left-[900px] top-[100px] h-[650px] w-[560px]">
+          <div className="absolute left-[900px] top-[152px] h-[650px] w-[560px]">
             <BlueprintTower />
           </div>
-          <div className="absolute left-[708px] top-[345px] z-10 flex w-[140px] flex-col gap-3">
+          <div className="absolute left-[708px] top-[435px] z-10 flex w-[140px] flex-col gap-3">
             <div className="notch border-l-[3px] border-[#E9B927] bg-[#20211E]/95 p-3 shadow-xl backdrop-blur">
               <p className="label-mono text-[7px] text-white/45">Realização</p>
               <div className="mt-1 flex items-center gap-2">
