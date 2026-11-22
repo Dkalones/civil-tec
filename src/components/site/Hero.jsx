@@ -62,7 +62,7 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-25" aria-hidden="true" style={{ backgroundImage: "radial-gradient(ellipse at 76% 54%, rgba(233,185,39,.09), transparent 45%), repeating-linear-gradient(0deg, transparent 0 59px, rgba(255,255,255,.045) 60px), repeating-linear-gradient(90deg, transparent 0 59px, rgba(255,255,255,.035) 60px)" }} />
       <div className="absolute inset-0 bg-gradient-to-r from-[#171815] via-[#171815]/95 to-[#171815]/45" aria-hidden="true" />
 
-      <div className="relative mx-auto grid min-h-[calc(100svh-60px)] w-full max-w-[1000px] items-start gap-6 px-5 pb-8 pt-[58px] sm:px-6 lg:grid-cols-12 lg:gap-0 lg:px-0">
+      <div className="relative mx-auto grid min-h-[calc(100svh-60px)] w-full max-w-[1000px] items-start gap-6 px-5 pb-8 pt-[122px] sm:px-6 lg:grid-cols-12 lg:gap-0 lg:px-0">
         <div className="relative z-10 lg:col-span-6">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <span className="label-mono bg-[#E9B927] px-2 py-1 text-[#171815]">[ 01 ]</span>
@@ -122,7 +122,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-7 max-w-[490px]">
+          <div className="max-w-[490px]">
             <Countdown />
           </div>
 
