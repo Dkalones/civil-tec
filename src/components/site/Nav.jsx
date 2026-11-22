@@ -31,21 +31,21 @@ export default function Nav() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || open ? "bg-black/95 shadow-lg shadow-black/30 backdrop-blur-xl" : "bg-black/75 backdrop-blur-md"}`}>
-      <div className="mx-auto flex h-[84px] sm:h-[96px] lg:h-[112px] w-full max-w-[1600px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-14">
+      <div className="mx-auto flex h-[60px] w-full max-w-[1000px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-0">
         <Link to="/" className="flex shrink-0 items-center" aria-label="CivilTec — página inicial">
-          <img src="/brand/civiltec-logo.svg" alt="CivilTec" className="h-[72px] w-auto max-w-[130px] object-contain sm:h-[88px] sm:max-w-[150px] lg:h-[108px] lg:max-w-[170px] object-contain" />
+          <img src="/brand/civiltec-logo.svg" alt="CivilTec" className="h-[48px] w-auto max-w-[74px] object-contain" />
         </Link>
 
-        <nav className="hidden items-center gap-7 rounded-xl border border-white/10 bg-[#171717]/95 px-7 py-4 lg:flex">
+        <nav className="hidden items-center gap-6 px-2 py-2 lg:flex">
           {LINKS.map((l) => (
-            <Link key={l.hash} to="/" hash={l.hash} className="font-mono text-[10px] font-semibold uppercase tracking-[.19em] text-white/85 transition hover:text-[#F2C400]">
+            <Link key={l.hash} to="/" hash={l.hash} className="font-mono text-[8px] font-semibold uppercase tracking-[.18em] text-white/85 transition hover:text-[#F2C400]">
               {l.label}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link to="/inscricao" className={`${btnPrimary} hidden !border-[#F2C400] !bg-[#F2C400] !px-6 !py-3 !font-bold !text-black sm:inline-flex`}>Inscreva-se</Link>
+          <Link to="/inscricao" className={`${btnPrimary} hidden !border-[#F2C400] !bg-[#F2C400] !min-h-[44px] !px-5 !py-2 !font-bold !text-black sm:inline-flex`}>Inscreva-se</Link>
           <button type="button" onClick={() => setOpen(v => !v)} className="grid h-11 w-11 place-items-center text-white lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
