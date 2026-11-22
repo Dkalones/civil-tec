@@ -79,7 +79,7 @@ export default function Hero() {
               Quatro dias de palestras, encontros e troca de conhecimento para quem está reinventando a engenharia civil no Brasil.
             </p>
 
-            <div className="mt-6 grid max-w-[490px] grid-cols-[.82fr_.78fr_1.5fr] gap-2">
+            <div className="mt-6 grid max-w-[490px] grid-cols-[.82fr_.70fr_1.58fr] gap-2">
               <InfoCard icon={CalendarDays} label="Quando" className="min-h-[106px] !p-3">
                 <strong className="block font-heading text-[38px] font-black leading-none text-[#F2C400]">3–6</strong>
                 <span className="mt-1 block text-[10px] font-semibold leading-tight text-white">de maio de 2027</span>
@@ -124,7 +124,7 @@ export default function Hero() {
             <div className="relative h-[440px] w-full max-w-[510px] sm:h-[560px] lg:h-[680px]">
               <ConstructionVisual />
             </div>
-            <div className="absolute bottom-4 left-0 z-10 hidden w-[140px] flex-col gap-3 sm:flex lg:left-[218px] lg:top-[285px] lg:bottom-auto">
+            <div className="absolute bottom-4 left-0 z-10 hidden w-[140px] flex-col gap-3 sm:flex lg:left-[218px] lg:top-[385px] lg:bottom-auto">
               <InfoCard icon={Crosshair} label="Coordenadas" className="p-3">
                 <p className="font-heading text-lg font-bold">6.5352° S</p><p className="font-heading text-lg font-bold">35.7325° W</p>
                 <p className="mt-1 font-mono text-[8px] uppercase text-white/50">Araruna · PB · Brasil</p>
