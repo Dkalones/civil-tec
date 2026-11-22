@@ -506,42 +506,49 @@
 }
 
 
-/* Fundo blueprint cinza-grafite inspirado na referência visual */
+/* Fundo blueprint — correspondência mais fiel à referência */
 .ct-hero {
-  background-color: #202120 !important;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #292b2a !important;
   background-image:
-    radial-gradient(ellipse 62% 58% at 78% 88%, rgba(190, 190, 190, .22), transparent 72%),
-    radial-gradient(ellipse 54% 48% at 18% 72%, rgba(115, 117, 116, .13), transparent 74%),
-    linear-gradient(112deg, #171817 0%, #202120 48%, #303231 100%) !important;
-  background-size: auto, auto, auto !important;
-  background-position: center, center, center !important;
+    radial-gradient(ellipse 72% 58% at 73% 88%, rgba(190, 192, 190, .22) 0%, rgba(150, 153, 151, .12) 42%, transparent 76%),
+    linear-gradient(180deg, #171817 0%, #202221 48%, #343736 100%) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .ct-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
-  opacity: .72;
+  opacity: .82;
   background-image:
-    linear-gradient(rgba(225, 228, 225, .075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(225, 228, 225, .075) 1px, transparent 1px),
-    linear-gradient(90deg, transparent 48%, rgba(225, 228, 225, .17) 49.5%, rgba(225, 228, 225, .17) 50.5%, transparent 52%),
-    linear-gradient(transparent 48%, rgba(225, 228, 225, .17) 49.5%, rgba(225, 228, 225, .17) 50.5%, transparent 52%);
-  background-size: 60px 60px, 60px 60px, 120px 120px, 120px 120px;
-  background-position: 0 0, 0 0, 0 0, 0 0;
+    linear-gradient(rgba(218, 222, 219, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 222, 219, .075) 1px, transparent 1px),
+    radial-gradient(circle, rgba(226, 229, 226, .22) 1px, transparent 1.7px);
+  background-size: 60px 60px, 60px 60px, 60px 60px;
+  background-position: 0 0, 0 0, 0 0;
 }
 .ct-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
-  opacity: .62;
+  opacity: .72;
   background-image:
-    repeating-linear-gradient(137deg, transparent 0 185px, rgba(220, 223, 220, .055) 186px, transparent 187px 330px),
-    radial-gradient(ellipse at 76% 65%, transparent 0 25%, rgba(220, 223, 220, .075) 25.08%, transparent 25.22%, transparent 39%, rgba(220, 223, 220, .055) 39.08%, transparent 39.22%);
+    radial-gradient(ellipse at 73% 66%, transparent 0 27.8%, rgba(220, 223, 220, .10) 27.95%, transparent 28.1%, transparent 42%, rgba(220, 223, 220, .075) 42.15%, transparent 42.3%, transparent 57%, rgba(220, 223, 220, .05) 57.15%, transparent 57.3%),
+    repeating-linear-gradient(135deg, transparent 0 178px, rgba(220, 223, 220, .045) 179px, transparent 180px 310px),
+    linear-gradient(90deg, transparent 0 49.94%, rgba(225, 228, 225, .075) 50%, transparent 50.06%),
+    linear-gradient(0deg, transparent 0 49.94%, rgba(225, 228, 225, .075) 50%, transparent 50.06%);
+  background-size: 100% 100%, 100% 100%, 180px 180px, 180px 180px;
+  background-position: center, center, 0 0, 0 0;
 }
 .ct-hero-inner {
+  position: relative;
   z-index: 1;
 }
