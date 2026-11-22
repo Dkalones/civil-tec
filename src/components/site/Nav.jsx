@@ -31,7 +31,7 @@ export default function Nav() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 border-b border-white/5 transition-colors duration-300 ${scrolled || open ? "bg-[#171815]/95 backdrop-blur-md" : "bg-[#171815]/70 backdrop-blur-sm"}`}>
-      <div className="mx-auto flex h-[60px] w-full max-w-[1000px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-0">
+      <div className="mx-auto flex h-[60px] w-full max-w-[1180px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-0">
         <Link to="/" className="flex items-center" aria-label="CivilTec — página inicial">
           <img src="/brand/civiltec-logo.svg" alt="CivilTec" className="h-[48px] w-auto max-w-[76px] object-contain"/>
         </Link>
