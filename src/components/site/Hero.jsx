@@ -94,7 +94,22 @@ export default function Hero() {
             </InfoCard>
             <InfoCard icon={CalendarDays} label="Calendário" className="min-h-[106px] !p-2">
               <div className="grid grid-cols-2 gap-1">
-                {["SEG|03","TER|04","QUA|05","QUI|06"].map((v,i)=><div key={v} className={`border px-1 py-1 ${i===3?"border-[#efbd20] bg-[#efbd20] text-[#171815]":"border-white/15 bg-black/35"}`}><span className="block font-mono text-[7px] leading-none">{v.split("|")[0]}</span><b className="font-heading text-[17px] leading-none">{v.split("|")[1]}</b></div>)}
+                {[
+                  { day: "SEG", date: "03" },
+                  { day: "TER", date: "04" },
+                  { day: "QUA", date: "05" },
+                  { day: "QUI", date: "06" },
+                ].map(({ day, date }, i) => (
+                  <div
+                    key={day}
+                    className={i === 3
+                      ? "border border-[#efbd20] bg-[#efbd20] px-1 py-1 text-[#171815]"
+                      : "border border-white/15 bg-black/35 px-1 py-1"}
+                  >
+                    <span className="block font-mono text-[7px] leading-none">{day}</span>
+                    <b className="font-heading text-[17px] leading-none">{date}</b>
+                  </div>
+                ))}
               </div>
             </InfoCard>
             <InfoCard icon={MapPin} label="Onde" className="min-h-[106px] !p-3">
