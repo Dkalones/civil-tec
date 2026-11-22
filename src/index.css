@@ -446,3 +446,36 @@
     padding-bottom: 11px;
   }
 }
+
+
+/* Refinamento de espaçamento entre a ilustração e os cartões técnicos */
+@media (min-width: 1201px) {
+  .ct-building-svg {
+    right: -16px;
+    top: 16px;
+  }
+  .ct-side-details {
+    left: -26px;
+    gap: 12px;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-building-svg {
+    right: -8px;
+    top: 14px;
+  }
+  .ct-side-details {
+    left: -12px;
+    gap: 11px;
+  }
+}
+@media (max-width: 700px) {
+  .ct-building-svg {
+    right: -4px;
+    top: 8px;
+  }
+  .ct-side-details {
+    left: 0;
+    gap: 10px;
+  }
+}
