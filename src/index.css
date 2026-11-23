@@ -552,3 +552,36 @@
   position: relative;
   z-index: 1;
 }
+
+
+/* Assets oficiais CivilTec — textura e artes responsivas */
+.ct-hero::before {
+  background-image:
+    url("/assets/civiltec/08-textura-fundo/textura-fundo.svg"),
+    linear-gradient(rgba(218, 222, 219, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 222, 219, .045) 1px, transparent 1px);
+  background-size: cover, 60px 60px, 60px 60px;
+  background-position: center, 0 0, 0 0;
+  background-repeat: no-repeat, repeat, repeat;
+  opacity: .58;
+}
+.ct-hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0 -5% 0 5%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("/assets/civiltec/01-arte-principal/arte-principal-pc.svg");
+  background-repeat: no-repeat;
+  background-position: center 44%;
+  background-size: contain;
+  opacity: .28;
+}
+@media (max-width: 700px) {
+  .ct-hero-art::before {
+    inset: 0;
+    background-image: url("/assets/civiltec/01-arte-principal/arte-principal-mobile.svg");
+    background-position: center 38%;
+    opacity: .22;
+  }
+}
