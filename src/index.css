@@ -588,3 +588,24 @@
 @media (max-width: 700px) {
   .ct-hero-artwork img { object-position: center top; }
 }
+
+
+/* Amplia a ilustração principal sem alterar a coluna de conteúdo */
+@media (min-width: 1201px) {
+  .ct-hero-artwork img {
+    transform: scale(1.42);
+    transform-origin: right center;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-artwork img {
+    transform: scale(1.22);
+    transform-origin: center center;
+  }
+}
+@media (max-width: 700px) {
+  .ct-hero-artwork img {
+    transform: scale(1.12);
+    transform-origin: center top;
+  }
+}
