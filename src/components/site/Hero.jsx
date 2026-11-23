@@ -123,15 +123,15 @@ function SideDetails() {
         <div className="mt-1 flex items-center gap-1.5 text-[13px] font-bold"><b className="bg-[#F5BE1F] px-1 text-[#141414] text-[9px]">ISSN</b>{EVENT.issn}</div>
         <div className="ct-micro-label mt-1">PUBLICAÇÃO CIENTÍFICA</div>
       </InfoCard>
-      <svg className="ct-seal" viewBox="0 0 100 100" fill="none" role="img" aria-label="Certificado para todos os participantes, edição 2027">
-        <defs><path id="ct-seal-path" d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0" /></defs>
-        <circle cx="50" cy="50" r="48" fill="#151515" stroke="#F5BE1F" strokeWidth="1.5" />
-        <circle cx="50" cy="50" r="26" stroke="#F5BE1F" strokeWidth=".8" strokeOpacity=".6" />
-        <text fontFamily="JetBrains Mono, monospace" fontSize="5.6" fill="#F5BE1F" letterSpacing="1"><textPath href="#ct-seal-path">CERTIFICADO · EMITIDO PARA TODOS OS PARTICIPANTES · EDIÇÃO 2027 ·</textPath></text>
-        <circle cx="50" cy="48" r="15" fill="#1c1c1c" stroke="#F5BE1F" strokeWidth="2" />
-        <path d="m43 48 5 5 9-10" stroke="#F5BE1F" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="50" y="72" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="5" fill="#F5BE1F">2027</text>
-      </svg>
+      <img
+        className="ct-seal"
+        src="/assets/civiltec/04-selo-certificado/selo-certificado.svg"
+        alt="Selo de certificação CivilTec 2027"
+        width="100"
+        height="100"
+        loading="lazy"
+        decoding="async"
+      />
     </aside>
   );
 }
