@@ -609,3 +609,11 @@
     transform-origin: center top;
   }
 }
+
+
+/* Desloca a ilustração do prédio para a direita no desktop */
+@media (min-width: 1201px) {
+  .ct-hero-artwork img {
+    translate: 52px 0;
+  }
+}
