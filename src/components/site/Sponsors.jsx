@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { EVENT, SPONSOR_TIERS } from "@/lib/event-data";
+import { EVENT } from "@/lib/event-data";
 import SectionHeading from "@/components/site/SectionHeading";
 
 export default function Sponsors() {
@@ -10,7 +10,7 @@ export default function Sponsors() {
           index="08"
           eyebrow="Patrocinadores e apoiadores"
           title="Quem constrói junto com o congresso."
-          description="As cotas de patrocínio estão abertas para empresas de materiais, construtoras, escritórios e entidades do setor."
+          description="Empresas, instituições e organizações que apoiam e tornam o CivilTec possível."
           action={
             EVENT.email ? (
               <a
@@ -21,38 +21,22 @@ export default function Sponsors() {
                 <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             ) : (
-              <span className="label-mono text-ink/45">Contato oficial em definição</span>
+              <span className="label-mono text-ink/45">Patrocínio em breve</span>
             )
           }
         />
 
-        <div className="mt-12 divide-y divide-ink/10 border-y border-ink/15">
-          {SPONSOR_TIERS.map((tier) => (
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
             <div
-              key={tier.tier}
-              className="grid gap-4 py-6 md:grid-cols-[210px_1fr] md:items-center md:gap-8"
+              key={i}
+              className="flex min-h-[112px] items-center justify-center border border-dashed border-ink/25 bg-concrete/40 px-4 py-6 text-center"
             >
-              <div>
-                <p className="font-heading text-[17px] font-extrabold uppercase tracking-tight text-ink">
-                  {tier.tier}
-                </p>
-                <p className="label-mono mt-1 text-ink/40">{tier.note}</p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {Array.from({ length: tier.slots }).map((_, i) => (
-                  <div
-                    key={`${tier.tier}-${i}`}
-                    className="flex h-[86px] items-center justify-center border border-dashed border-ink/25 bg-concrete/40 px-3 text-center"
-                  >
-                    <span className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.14em] text-ink/40">
-                      Sua marca
-                      <br />
-                      aqui
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <span className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.14em] text-ink/40">
+                Sua marca
+                <br />
+                aqui
+              </span>
             </div>
           ))}
         </div>
@@ -60,25 +44,21 @@ export default function Sponsors() {
         <div className="mt-10 flex flex-col items-start justify-between gap-5 border border-ink/15 bg-concrete/50 p-6 md:flex-row md:items-center">
           <div>
             <p className="font-heading text-[17px] font-bold text-ink">
-              Cota máster, atividade ou apoio institucional?
+              Sua empresa ao lado da inovação na construção.
             </p>
             <p className="mt-1 text-[14px] text-ink/60">
-              {EVENT.email
-                ? "Envie um e-mail para a comissão e receba o mídia kit com números e contrapartidas."
-                : "O canal de contato para solicitar o mídia kit será divulgado em breve."}
+              Entre em contato com a comissão organizadora para conhecer as possibilidades de parceria e apoio ao congresso.
             </p>
           </div>
-          {EVENT.email ? (
-            <a
-              href={`mailto:${EVENT.email}?subject=M%C3%ADdia%20kit%20CivilTec`}
-              className="inline-flex min-h-[48px] items-center gap-2 border border-ink bg-ink px-6 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink-foreground transition hover:bg-ink/85"
-            >
-              Receber mídia kit
-              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-          ) : (
-            <span className="label-mono text-ink/45">Contato oficial em definição</span>
-          )}
+          <a
+            href={EVENT.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-[48px] shrink-0 items-center gap-2 border border-ink bg-ink px-6 font-heading text-[11.5px] font-bold uppercase tracking-[0.12em] text-ink-foreground transition hover:bg-ink/85"
+          >
+            Falar com a organização
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
