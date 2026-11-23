@@ -11,8 +11,6 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "CivilTec · Congresso de Tecnologia em Construções" },
-      { property: "og:image", content: "/assets/civiltec/07-imagem-compartilhamento/imagem-compartilhamento.png" },
-      { name: "twitter:card", content: "summary_large_image" },
       {
         name: "description",
         content:
@@ -28,9 +26,6 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/assets/civiltec/06-favicon/favicon.svg" },
-      { rel: "apple-touch-icon", href: "/assets/civiltec/06-favicon/apple-touch-icon.png" },
-      { rel: "preload", as: "image", href: "/assets/civiltec/01-arte-principal/arte-principal-pc.svg" },
     ],
   }),
   errorComponent: DefaultCatchBoundary,
