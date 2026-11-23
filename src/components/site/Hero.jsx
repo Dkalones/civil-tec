@@ -173,10 +173,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="ct-hero-art">
-          <picture className="ct-hero-official-art">
-            <source media="(max-width: 700px)" srcSet="/assets/civiltec/01-arte-principal/arte-principal-mobile.svg" />
-            <img src="/assets/civiltec/01-arte-principal/arte-principal-pc.svg" alt="Ilustração técnica de edifício e guindaste do CivilTec 2027" />
-          </picture>
+          <BuildingBlueprint />
           <SideDetails />
         </div>
       </div>
