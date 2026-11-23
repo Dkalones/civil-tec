@@ -25,82 +25,6 @@ function LocationRadar() {
   );
 }
 
-function BuildingBlueprint() {
-  return (
-    <svg className="ct-building-svg" viewBox="0 0 397 563" fill="none" role="img" aria-label="Projeto técnico de edifício em construção com guindaste">
-      <defs>
-        <pattern id="ct-win-left" patternUnits="userSpaceOnUse" width="21.8" height="24.5">
-          <rect x="3.8" y="6.2" width="14.4" height="12.4" fill="#2a2a2a" stroke="#474747" strokeWidth=".7" />
-        </pattern>
-        <pattern id="ct-win-right" patternUnits="userSpaceOnUse" width="21.25" height="24.5">
-          <rect x="3" y="6.2" width="14.4" height="12.4" fill="#2a2a2a" stroke="#474747" strokeWidth=".7" />
-        </pattern>
-        <pattern id="ct-lattice" patternUnits="userSpaceOnUse" width="11" height="11">
-          <path d="M0 11 11 0M0 0l11 11" stroke="#F5BE1F" strokeWidth=".6" strokeOpacity=".5" />
-        </pattern>
-        <linearGradient id="ct-fade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset=".6" stopColor="#141414" stopOpacity="0" />
-          <stop offset="1" stopColor="#141414" stopOpacity=".7" />
-        </linearGradient>
-      </defs>
-      <text x="141" y="97" fontFamily="JetBrains Mono, monospace" fontSize="8.8" letterSpacing="2" fill="#F5BE1F" fillOpacity=".65">[ PROJETO ]</text>
-      <g stroke="#F5BE1F" strokeWidth="1">
-        <path d="M147 39.3 378 172M147 46l231 133" strokeOpacity=".65" />
-        <path d="M324 113v29M190 63v48" strokeDasharray="3 3" strokeOpacity=".7" />
-        <path d="M183 113h14m-7 0v13" />
-      </g>
-      <rect x="318" y="140" width="11" height="352" fill="url(#ct-lattice)" />
-      <path d="M318 138v350m11-344v350" stroke="#F5BE1F" />
-      <polygon points="356,156 377,168 377,188 356,176" fill="#F5BE1F" fillOpacity=".85" />
-      <g stroke="#6f6f6f" strokeWidth=".8">
-        <path d="M52 178v271M44 173.4l16 9.3M44 444.4l16 9.3" />
-      </g>
-      <text x="2" y="313" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#6a6a6a">1.00 m</text>
-      <circle cx="31" cy="491" r="6" stroke="#555" strokeWidth=".8" />
-      <text x="31" y="493.5" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="6.5" fill="#6a6a6a">A</text>
-      <polygon points="52,471 187,549 294,488 159,410" stroke="#8a8a8a" strokeWidth=".7" strokeOpacity=".5" />
-      <g stroke="#F5BE1F" strokeWidth="1" strokeLinejoin="round">
-        <polygon points="78,193 187,255 187,377 78,317" fill="#F5BE1F" fillOpacity=".04" />
-        <polygon points="187,255 272,205 272,329 187,377" fill="#F5BE1F" fillOpacity=".04" />
-        <g strokeOpacity=".55">
-          <path d="M78 217.7 187 279.7M78 242.4l109 62M78 267.1l109 62M78 291.8l109 62M187 279.7l85-50M187 304.4l85-50M187 329.1l85-50M187 353.8l85-50M78 217.7l87-50M78 242.4l87-50M78 267.1l87-50M78 291.8l87-50M165 167.7l107 62M165 192.4l107 62M165 217.1l107 62M165 241.8l107 62" />
-        </g>
-        <polygon points="78,317 165,267 272,329 187,377" fill="#F5BE1F" fillOpacity=".03" />
-        <path d="m99.75 304.5 109 60m-87.25-72.5 109 60m-87.25-72.5 109 60m-147  -8 87-50m-59.75 65 87-50m-59.75 65 87-50" strokeOpacity=".5" />
-      </g>
-      <polygon points="78,317 187,377 187,526 78,466" fill="#1b1b1b" stroke="#9a9a9a" strokeWidth=".9" strokeOpacity=".7" />
-      <g transform="translate(78 317) skewY(28.8)">
-        <rect width="109" height="149" fill="url(#ct-win-left)" />
-        <rect x="47.4" y="6.2" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="3.8" y="79.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="25.6" y="79.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="3.8" y="128.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="25.6" y="128.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="91" y="104.2" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect width="109" height="149" fill="url(#ct-fade)" />
-      </g>
-      <polygon points="187,377 272,329 272,478 187,526" fill="#171717" stroke="#9a9a9a" strokeWidth=".9" strokeOpacity=".7" />
-      <g transform="translate(187 377) skewY(-29.5)">
-        <rect width="85" height="149" fill="url(#ct-win-right)" />
-        <rect x="45.5" y="6.2" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="24.25" y="55.2" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="66.75" y="79.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="24.25" y="79.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="3" y="79.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="24.25" y="104.2" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect x="45.5" y="128.7" width="14.4" height="12.4" fill="#F5BE1F" fillOpacity=".5" />
-        <rect width="85" height="149" fill="url(#ct-fade)" />
-      </g>
-      <g stroke="#F5BE1F" strokeWidth="1" strokeLinejoin="round">
-        <polygon points="78,193 165,143 272,205 187,255" fill="#F5BE1F" fillOpacity=".06" />
-        <polygon points="141.5,197.3 165.9,183.3 196.5,200.7 172.1,214.7" strokeOpacity=".35" />
-        <path d="M141.5 182.3v15m30.6 2.4v15m24.4-29v15" strokeOpacity=".35" />
-        <polygon points="141.5,182.3 165.9,168.3 196.5,185.7 172.1,199.7" strokeOpacity=".8" />
-      </g>
-    </svg>
-  );
-}
-
 function SideDetails() {
   return (
     <aside className="ct-side-details">
@@ -173,7 +97,19 @@ export default function Hero() {
           </div>
         </div>
         <div className="ct-hero-art">
-          <BuildingBlueprint />
+          <picture className="ct-hero-artwork">
+            <source
+              media="(max-width: 700px)"
+              srcSet="/assets/civiltec/01-arte-principal/arte-principal-mobile.svg"
+            />
+            <img
+              src="/assets/civiltec/01-arte-principal/arte-principal-pc.svg"
+              alt="Ilustração técnica de edifício em construção com guindaste"
+              width="1400"
+              height="1000"
+              fetchPriority="high"
+            />
+          </picture>
           <SideDetails />
         </div>
       </div>
