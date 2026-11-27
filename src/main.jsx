@@ -17,6 +17,8 @@ import Sobre from "@/routes/sobre";
 import Palestrantes from "@/routes/palestrantes";
 import Programacao from "@/routes/programacao";
 import Local from "@/routes/local";
+import Patrocinio from "@/routes/patrocinio";
+import FaqPage from "@/routes/faq";
 import "@/index.css";
 
 const rootRoute = createRootRoute({
@@ -33,6 +35,8 @@ const routeTree = rootRoute.addChildren([
   createRoute({ getParentRoute: () => rootRoute, path: "/palestrantes", component: Palestrantes }),
   createRoute({ getParentRoute: () => rootRoute, path: "/programacao", component: Programacao }),
   createRoute({ getParentRoute: () => rootRoute, path: "/local", component: Local }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/patrocinio", component: Patrocinio }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/faq", component: FaqPage }),
 ]);
 
 const router = createRouter({
