@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="label-mono text-ink-foreground/40">Navegação</p>
             <ul className="mt-4 grid grid-cols-2 gap-y-2.5 lg:grid-cols-1">
               {NAV.map((item) => (
-                <li key={item.hash}>
+                <li key={item.to}>
                   <Link
                     to="/"
                     hash={item.hash}
