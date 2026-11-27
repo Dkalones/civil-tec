@@ -50,8 +50,7 @@ export default function Footer() {
               {NAV.map((item) => (
                 <li key={item.to}>
                   <Link
-                    to="/"
-                    hash={item.hash}
+                    to={item.to}
                     className="text-[14px] text-ink-foreground/70 transition hover:text-signal"
                   >
                     {item.label}
