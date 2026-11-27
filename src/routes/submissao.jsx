@@ -1,8 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { FileText } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { EVENT } from "@/lib/event-data";
+
+const DOWNLOADS = [
+  {
+    title: "Edital de submissão de artigos",
+    description: "Consulte as regras, os prazos e as condições para participar.",
+    href: "https://drive.google.com/uc?export=download&id=193n0MW7MdMBUXt36kcd6hUjtxXx97b2n",
+    format: "PDF",
+  },
+  {
+    title: "Template oficial do artigo",
+    description: "Baixe o modelo editável para preparar seu trabalho.",
+    href: "https://docs.google.com/document/d/1QiM-_cVkVkILxkjQYHAhrWliWD8rW6zO/export?format=docx",
+    format: "DOCX",
+  },
+  {
+    title: "Orientações para formatação",
+    description: "Confira as instruções para preencher e formatar o documento.",
+    href: "https://docs.google.com/document/d/1CW7Mw2fYklmPf66ZcvoJIaykv5DFyXDd/export?format=docx",
+    format: "DOCX",
+  },
+];
 
 function Page() {
   return (
@@ -16,18 +37,45 @@ function Page() {
             Submissão de trabalhos
           </h1>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-foreground/70">
-            Em breve serão publicadas as orientações para participação acadêmica no CivilTec.
+            Acesse o edital, baixe o modelo oficial e confira as orientações para preparar seu trabalho para o CivilTec.
           </p>
         </div>
       </section>
-      <section className="mx-auto w-full max-w-[900px] px-5 py-16 sm:px-8 md:py-24">
-        <div className="border border-dashed border-ink/25 bg-card px-6 py-14 text-center">
-          <FileText className="mx-auto h-7 w-7 text-ink/45" aria-hidden="true" />
-          <h2 className="mt-4 font-heading text-2xl font-extrabold text-ink">Informações em breve</h2>
-          <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-ink/60">
-            Chamada de trabalhos, prazos, eixos temáticos, normas de formatação e sistema de submissão serão apresentados nesta página após definição pela organização.
+      <section className="mx-auto w-full max-w-[1000px] px-5 py-16 sm:px-8 md:py-24">
+        <div className="mb-10">
+          <p className="label-mono text-ink/50">[ Documentos oficiais ]</p>
+          <h2 className="mt-3 font-heading text-2xl font-extrabold text-ink sm:text-3xl">Materiais para submissão</h2>
+          <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-ink/60">
+            Os arquivos estão disponíveis para consulta e download. O modelo do artigo e as orientações podem ser baixados em formato Word.
           </p>
-          <Link to="/" className="mt-7 inline-flex border border-ink px-5 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground">
+        </div>
+        <div className="grid gap-4">
+          {DOWNLOADS.map((item, index) => (
+            <article key={item.title} className="flex flex-col gap-5 border border-ink/15 bg-card p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-ink text-ink-foreground">
+                  <FileText className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="label-mono text-ink/45">0{index + 1} · {item.format}</p>
+                  <h3 className="mt-1 font-heading text-lg font-bold text-ink">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-ink/60">{item.description}</p>
+                </div>
+              </div>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-2 border border-ink px-5 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Baixar arquivo
+              </a>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10">
+          <Link to="/" className="inline-flex border border-ink/30 px-5 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground">
             Voltar ao site
           </Link>
         </div>
