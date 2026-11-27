@@ -5,12 +5,12 @@ import { EVENT } from "@/lib/event-data";
 import { btnPrimary } from "@/components/site/styles";
 
 const LINKS = [
-  { label: "Sobre", hash: "sobre" },
-  { label: "Palestrantes", hash: "palestrantes" },
-  { label: "Programação", hash: "programacao" },
-  { label: "Submissão", hash: "submissao" },
-  { label: "Ingressos", hash: "ingressos" },
-  { label: "Local", hash: "local" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Palestrantes", to: "/palestrantes" },
+  { label: "Programação", to: "/programacao" },
+  { label: "Submissão", to: "/submissao" },
+  { label: "Inscrições", to: "/inscricao" },
+  { label: "Local", to: "/local" },
 ];
 
 export default function Nav() {
@@ -37,7 +37,7 @@ export default function Nav() {
         </Link>
         <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {LINKS.map((l) => (
-            <Link key={l.hash} to="/" hash={l.hash} className="whitespace-nowrap font-mono text-[11px] font-semibold uppercase tracking-[.13em] text-white/80 transition hover:text-[#efbd20] xl:text-[12px]">
+            <Link key={l.to} to={l.to} className="whitespace-nowrap font-mono text-[11px] font-semibold uppercase tracking-[.13em] text-white/80 transition hover:text-[#efbd20] xl:text-[12px]">
               {l.label}
             </Link>
           ))}
@@ -52,7 +52,7 @@ export default function Nav() {
       {open && (
         <div className="border-t border-white/10 bg-[#171815] px-5 pb-8 pt-4 lg:hidden">
           <nav className="flex flex-col">
-            {LINKS.map((l) => <Link key={l.hash} to="/" hash={l.hash} onClick={() => setOpen(false)} className="border-b border-white/10 py-4 font-heading text-lg font-semibold text-white">{l.label}</Link>)}
+            {LINKS.map((l) => <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="border-b border-white/10 py-4 font-heading text-lg font-semibold text-white">{l.label}</Link>)}
           </nav>
           <Link to="/inscricao" onClick={() => setOpen(false)} className={`${btnPrimary} mt-6 w-full`}>Garantir minha vaga</Link>
           <p className="label-mono mt-6 text-white/45">{EVENT.dateShort} · {EVENT.city}</p>
