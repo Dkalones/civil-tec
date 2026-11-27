@@ -12,6 +12,7 @@ export default function Speakers() {
           eyebrow="Palestrantes"
           title="Quem sobe ao palco do CivilTec."
           description="Os nomes, perfis e temas das palestras serão divulgados em breve."
+          tone="dark"
           action={
             <Link
               to="/"
