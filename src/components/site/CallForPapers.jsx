@@ -1,5 +1,20 @@
-import { FileText } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 import SectionHeading from "@/components/site/SectionHeading";
+
+const DOCUMENTS = [
+  {
+    label: "Edital de submissão",
+    href: "https://drive.google.com/uc?export=download&id=193n0MW7MdMBUXt36kcd6hUjtxXx97b2n",
+  },
+  {
+    label: "Template do artigo (Word)",
+    href: "https://docs.google.com/document/d/1QiM-_cVkVkILxkjQYHAhrWliWD8rW6zO/export?format=docx",
+  },
+  {
+    label: "Orientações de formatação (Word)",
+    href: "https://docs.google.com/document/d/1CW7Mw2fYklmPf66ZcvoJIaykv5DFyXDd/export?format=docx",
+  },
+];
 
 export default function CallForPapers() {
   return (
@@ -11,14 +26,24 @@ export default function CallForPapers() {
           eyebrow="Artigos e trabalhos"
           tone="dark"
           title="Compartilhe sua pesquisa."
-          description="As orientações para submissão de artigos e trabalhos acadêmicos serão divulgadas em breve."
+          description="Consulte o edital e acesse os documentos necessários para preparar sua submissão."
         />
-        <div className="mt-12 border border-ink-foreground/20 bg-ink-foreground/[0.04] px-6 py-12 text-center">
-          <FileText className="mx-auto h-6 w-6 text-signal" aria-hidden="true" />
-          <h3 className="mt-4 font-heading text-xl font-extrabold text-ink-foreground">Submissões em breve</h3>
-          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-ink-foreground/60">
-            Prazos, normas, eixos temáticos e acesso ao sistema de submissão serão informados nesta seção.
-          </p>
+        <div className="mt-12 grid gap-3 sm:grid-cols-3">
+          {DOCUMENTS.map((document) => (
+            <a
+              key={document.label}
+              href={document.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-[150px] flex-col justify-between border border-ink-foreground/20 bg-ink-foreground/[0.04] p-5 transition hover:border-signal hover:bg-ink-foreground/[0.08]"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <FileText className="h-5 w-5 text-signal" aria-hidden="true" />
+                <Download className="h-4 w-4 text-ink-foreground/50 transition group-hover:text-signal" aria-hidden="true" />
+              </div>
+              <span className="mt-6 font-heading text-sm font-bold text-ink-foreground">{document.label}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
