@@ -5,14 +5,14 @@ import { btnPrimary } from "@/components/site/styles";
 import LogoPlaceholder from "@/components/site/LogoPlaceholder";
 
 const NAV = [
-  { label: "Sobre", hash: "sobre" },
-  { label: "Palestrantes", hash: "palestrantes" },
-  { label: "Programação", hash: "programacao" },
-  { label: "Submissão", hash: "submissao" },
-  { label: "Ingressos", hash: "ingressos" },
-  { label: "Local", hash: "local" },
-  { label: "Patrocínio", hash: "patrocinio" },
-  { label: "FAQ", hash: "faq" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Palestrantes", to: "/palestrantes" },
+  { label: "Programação", to: "/programacao" },
+  { label: "Submissão", to: "/submissao" },
+  { label: "Inscrições", to: "/inscricao" },
+  { label: "Local", to: "/local" },
+  { label: "Patrocínio", to: "/patrocinio" },
+  { label: "FAQ", to: "/faq" },
 ];
 
 export default function Footer() {
