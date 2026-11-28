@@ -2,51 +2,91 @@ import { useEffect, useState } from "react";
 import { EVENT } from "@/lib/event-data";
 
 const TARGET = new Date(EVENT.startISO).getTime();
-const LAUNCH = TARGET - 1000 * 60 * 60 * 24 * 400;
+const END = new Date(EVENT.endISO).getTime();
+const TIMELINE_START = new Date("2026-05-03T00:00:00-03:00").getTime();
 const pad = (n) => String(n).padStart(2, "0");
 
 export default function Countdown() {
-  const [left, setLeft] = useState(null);
+  const [now, setNow] = useState(Date.now());
 
   useEffect(() => {
-    const tick = () => setLeft(Math.max(0, TARGET - Date.now()));
-    tick();
-    const id = window.setInterval(tick, 1000);
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, []);
 
-  const parts = left === null ? null : {
-    d: Math.floor(left / 86400000),
-    h: Math.floor((left % 86400000) / 3600000),
-    m: Math.floor((left % 3600000) / 60000),
-    s: Math.floor((left % 60000) / 1000),
-  };
-  const progress = left === null ? 0 : Math.min(100, Math.max(0, ((Date.now() - LAUNCH) / (TARGET - LAUNCH)) * 100));
-  const cells = [
-    { key: "dias", value: parts ? String(parts.d) : "--" },
-    { key: "horas", value: parts ? pad(parts.h) : "--" },
-    { key: "min", value: parts ? pad(parts.m) : "--" },
-    { key: "seg", value: parts ? pad(parts.s) : "--" },
-  ];
+  const status = now < TARGET ? "upcoming" : now < END ? "live" : "ended";
+  const reference = status === "live" ? END : TARGET;
+  const left = Math.max(0, reference - now);
+  const days = Math.floor(left / 86400000);
+  const hours = Math.floor((left % 86400000) / 3600000);
+  const minutes = Math.floor((left % 3600000) / 60000);
+  const seconds = Math.floor((left % 60000) / 1000);
+
+  const progress =
+    status === "upcoming"
+      ? Math.min(100, Math.max(0, (1 - (TARGET - now) / (TARGET - TIMELINE_START)) * 100))
+      : status === "live"
+        ? Math.min(100, Math.max(0, ((now - TARGET) / (END - TARGET)) * 100))
+        : 100;
+
+  const progressWidth = progress + "%";
+  const heading =
+    status === "upcoming"
+      ? "CONTAGEM PARA ABERTURA"
+      : status === "live"
+        ? "CONGRESSO EM ANDAMENTO"
+        : "CONGRESSO ENCERRADO";
 
   return (
-    <div className="notch h-[127px] w-full border-l-[3px] border-[#E9B927] bg-[#20211E]/95 px-4 py-4">
-      <div className="flex items-center justify-between gap-3">
-        <p className="label-mono text-[8px] text-white/55">Contagem para a abertura</p>
-        <p className="label-mono text-[8px] text-[#E9B927]">Linha do tempo</p>
+    <div className="ct-countdown" aria-live="off">
+      <div className="ct-countdown-heading">
+        <span>{heading}</span>
+        <strong>{status === "upcoming" ? "LINHA DO TEMPO" : status === "live" ? "ENCERRAMENTO" : "ATÉ A PRÓXIMA EDIÇÃO"}</strong>
       </div>
-      <div className="mt-3 grid grid-cols-4 divide-x divide-white/10">
-        {cells.map((c) => (
-          <div key={c.key} className="px-2 first:pl-0 last:pr-0">
-            <p className="font-heading text-[30px] font-extrabold leading-none tabular-nums text-white">{c.value}</p>
-            <p className="label-mono mt-1 text-[7px] text-white/40">{c.key}</p>
+
+      {status === "ended" ? (
+        <div className="ct-countdown-values">
+          <div style={{ gridColumn: "1 / -1" }}>
+            <b style={{ fontSize: "clamp(20px, 4vw, 28px)", color: "#F5BE1F" }}>Obrigado por participar!</b>
+            <span>O CIVILTEC 2027 FOI CONCLUÍDO · ATÉ A PRÓXIMA EDIÇÃO</span>
           </div>
-        ))}
-      </div>
-      <div className="mt-3 h-[3px] w-full bg-white/15">
-        <div className="h-full bg-[#E9B927] transition-[width] duration-700 ease-out" style={{ width: `${progress}%` }} />
-      </div>
-      <p className="sr-only">Abertura em {EVENT.dateLabel}</p>
+        </div>
+      ) : (
+        <>
+          <div className="ct-countdown-values">
+            {[
+              { value: String(days), label: "DIAS" },
+              { value: pad(hours), label: "HORAS" },
+              { value: pad(minutes), label: "MIN" },
+              { value: pad(seconds), label: "SEG" },
+            ].map((item) => (
+              <div key={item.label}>
+                <b>{item.value}</b>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div
+            className="ct-progress"
+            role="progressbar"
+            aria-label={status === "upcoming" ? "Progresso até a abertura" : "Progresso do congresso"}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow={Math.round(progress)}
+          >
+            <span className="ct-progress-percent" style={{ left: Math.min(94, Math.max(6, progress)) + "%" }}>
+              {Math.round(progress)}%
+            </span>
+            <div className="ct-progress-ticks" />
+            <div className="ct-progress-fill" style={{ width: progressWidth }} />
+            <div className="ct-progress-marker" style={{ left: progressWidth }}><i /><b /></div>
+            <span className="ct-progress-start">{status === "upcoming" ? "03.05.26" : "03.05.27"}</span>
+            <span className="ct-progress-end">{status === "upcoming" ? "03.05.27 · ABERTURA" : "06.05.27 · ENCERRAMENTO"}</span>
+          </div>
+        </>
+      )}
+      <span className="ct-corner" aria-hidden="true" />
     </div>
   );
 }

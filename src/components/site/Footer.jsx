@@ -5,14 +5,15 @@ import { btnPrimary } from "@/components/site/styles";
 import LogoPlaceholder from "@/components/site/LogoPlaceholder";
 
 const NAV = [
-  { label: "Sobre", hash: "sobre" },
-  { label: "Palestrantes", hash: "palestrantes" },
-  { label: "Programação", hash: "programacao" },
-  { label: "Submissão", hash: "submissao" },
-  { label: "Ingressos", hash: "ingressos" },
-  { label: "Local", hash: "local" },
-  { label: "Patrocínio", hash: "patrocinio" },
-  { label: "FAQ", hash: "faq" },
+  { label: "Sobre", to: "/sobre" },
+  { label: "Palestrantes", to: "/palestrantes" },
+  { label: "Programação", to: "/programacao" },
+  { label: "Minicursos", to: "/minicursos" },
+  { label: "Submissão", to: "/submissao" },
+  { label: "Inscrições", to: "/inscricao" },
+  { label: "Local", to: "/local" },
+  { label: "Patrocínio", to: "/patrocinio" },
+  { label: "FAQ", to: "/faq" },
 ];
 
 export default function Footer() {
@@ -48,10 +49,9 @@ export default function Footer() {
             <p className="label-mono text-ink-foreground/40">Navegação</p>
             <ul className="mt-4 grid grid-cols-2 gap-y-2.5 lg:grid-cols-1">
               {NAV.map((item) => (
-                <li key={item.hash}>
+                <li key={item.to}>
                   <Link
-                    to="/"
-                    hash={item.hash}
+                    to={item.to}
                     className="text-[14px] text-ink-foreground/70 transition hover:text-signal"
                   >
                     {item.label}
@@ -127,6 +127,15 @@ export default function Footer() {
             >
               Submissão de trabalhos
             </Link>
+            <a
+              href="https://www.instagram.com/j0aodieg0/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram de João D"
+              className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50 transition hover:text-signal"
+            >
+              Made by <span className="text-signal">João D</span>
+            </a>
           </div>
         </div>
       </div>

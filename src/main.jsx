@@ -13,6 +13,14 @@ import Home from "@/routes/index";
 import Inscricao from "@/routes/inscricao";
 import Submissao from "@/routes/submissao";
 import Privacidade from "@/routes/privacidade";
+import Sobre from "@/routes/sobre";
+import Palestrantes from "@/routes/palestrantes";
+import Programacao from "@/routes/programacao";
+import Minicursos from "@/routes/minicursos";
+import Local from "@/routes/local";
+import Patrocinio from "@/routes/patrocinio";
+import Certificados from "@/routes/certificados";
+import FaqPage from "@/routes/faq";
 import "@/index.css";
 
 const rootRoute = createRootRoute({
@@ -25,6 +33,14 @@ const routeTree = rootRoute.addChildren([
   createRoute({ getParentRoute: () => rootRoute, path: "/inscricao", component: Inscricao }),
   createRoute({ getParentRoute: () => rootRoute, path: "/submissao", component: Submissao }),
   createRoute({ getParentRoute: () => rootRoute, path: "/privacidade", component: Privacidade }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/sobre", component: Sobre }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/palestrantes", component: Palestrantes }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/programacao", component: Programacao }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/minicursos", component: Minicursos }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/local", component: Local }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/patrocinio", component: Patrocinio }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/certificados", component: Certificados }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/faq", component: FaqPage }),
 ]);
 
 const router = createRouter({

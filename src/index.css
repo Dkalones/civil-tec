@@ -119,30 +119,501 @@
   }
 }
 
-/* CivilTec 2027 — atmosfera e malha técnica da referência */
-.civiltec-hero {
-  background-color: #191a17;
+
+
+/* Landing page de referência CivilTec 2027 — fit desktop e responsivo */
+.ct-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 810px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #141414;
   background-image:
-    radial-gradient(ellipse at 71% 56%, rgba(104, 104, 88, 0.19) 0%, rgba(42, 43, 37, 0.10) 30%, transparent 63%),
-    radial-gradient(ellipse at 13% 10%, rgba(74, 75, 64, 0.12) 0%, transparent 46%),
-    linear-gradient(180deg, #191a17 0%, #20211d 55%, #292a25 100%);
+    radial-gradient(ellipse 60% 50% at 90% 95%, rgba(255,255,255,.10), transparent 70%),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: auto, 60px 60px, 60px 60px;
+  font-family: "Archivo", "Inter", system-ui, sans-serif;
 }
-.civiltec-blueprint {
-  opacity: .62;
+.ct-hero-inner {
+  position: relative;
+  width: min(1180px, calc(100% - 64px));
+  min-height: 810px;
+  margin: 0 auto;
+  padding: 76px 0 42px;
+}
+.ct-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: 570px;
+  max-width: 52%;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+.ct-eyebrow { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.ct-eyebrow > span {
+  padding:5px 8px; background:#F5BE1F; color:#141414;
+  font:700 10px "JetBrains Mono",monospace; letter-spacing:.12em;
+}
+.ct-eyebrow p {
+  margin:0; color:#c4c4c4; font:10px "JetBrains Mono",monospace;
+  letter-spacing:.16em; text-transform:uppercase;
+}
+.ct-eyebrow i { color:#777; font-style:normal; margin:0 5px; }
+.ct-hero-copy h1 {
+  margin:0; color:#fff; font-size:clamp(48px,4.05vw,64px);
+  font-weight:800; line-height:.94; letter-spacing:-.048em;
+  text-transform:uppercase;
+}
+.ct-hero-copy h1 em,.ct-hero-copy h1 strong { color:#F5BE1F; font-style:normal; }
+.ct-intro { max-width:540px; margin:0; color:#d2d2d2; font-size:16px; line-height:1.5; }
+.ct-primary-cards { display:flex; flex-wrap:nowrap; gap:8px; width:100%; }
+.ct-info-card {
+  position:relative; min-width:0; box-sizing:border-box;
+  background:#1a1a1a; border:1px solid #2c2c2c; border-left:3px solid #F5BE1F;
+  padding:12px 14px;
+}
+.ct-corner {
+  position:absolute; right:-1px; bottom:-1px; width:9px; height:9px;
+  background:#F5BE1F; clip-path:polygon(100% 0,100% 100%,0 100%);
+}
+.ct-card-label {
+  display:flex; align-items:center; gap:6px; color:#8c8c8c;
+  font:9px "JetBrains Mono",monospace; letter-spacing:.18em;
+}
+.ct-card-label svg { color:#F5BE1F; }
+.ct-date-card { flex:1.08 1 0; }
+.ct-place-card { flex:.92 1 0; }
+.ct-date-layout { display:flex; justify-content:space-between; gap:8px; margin-top:4px; }
+.ct-date-layout > div:first-child { display:flex; flex-direction:column; gap:2px; }
+.ct-date-range { margin-top:6px; color:#F5BE1F; font-size:46px; font-weight:800; line-height:1; letter-spacing:-.04em; }
+.ct-date-layout strong { margin-top:4px; color:#fff; font-size:12px; }
+.ct-date-layout small { margin-top:8px; color:#8c8c8c; font:8px "JetBrains Mono",monospace; letter-spacing:.04em; white-space:nowrap; }
+.ct-calendar { display:grid; grid-template-columns:repeat(2,46px); gap:4px; align-content:center; }
+.ct-calendar > div { box-sizing:border-box; width:46px; min-height:48px; padding:4px 5px; border:1px solid #F5BE1F; line-height:1.1; }
+.ct-calendar > div:last-child { background:rgba(245,190,31,.14); }
+.ct-calendar span { display:block; color:#9a9a9a; font:8px "JetBrains Mono",monospace; }
+.ct-calendar b { display:block; color:#fff; font-size:18px; font-weight:800; }
+.ct-calendar small { display:block; margin:2px 0 0; color:#F5BE1F; font:6px "JetBrains Mono",monospace; letter-spacing:.04em; }
+.ct-place-layout { display:flex; justify-content:space-between; align-items:flex-end; gap:8px; }
+.ct-place-layout > div:first-child { display:flex; flex-direction:column; min-width:0; }
+.ct-place-layout b { margin-top:10px; color:#fff; font-size:17px; font-weight:800; letter-spacing:-.02em; white-space:nowrap; }
+.ct-place-layout strong { color:#F5BE1F; font-size:10px; }
+.ct-place-layout span { color:#bdbdbd; font-size:10px; }
+.ct-place-layout small { margin-top:12px; color:#8c8c8c; font:9px "JetBrains Mono",monospace; letter-spacing:.1em; }
+.ct-radar { display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end; gap:4px; }
+.ct-radar small { margin:0; font-size:7px; letter-spacing:.04em; white-space:nowrap; }
+.ct-countdown {
+  position:relative; width:100%; max-width:570px; box-sizing:border-box;
+  background:#1a1a1a; border:1px solid #2c2c2c; border-left:3px solid #F5BE1F;
+  padding:14px 18px; display:flex; flex-direction:column; gap:12px;
+}
+.ct-countdown-heading { display:flex; justify-content:space-between; gap:12px; font:10px "JetBrains Mono",monospace; letter-spacing:.22em; }
+.ct-countdown-heading span { color:#9a9a9a; }
+.ct-countdown-heading strong { color:#F5BE1F; font-weight:500; }
+.ct-countdown-values { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+.ct-countdown-values > div { display:flex; flex-direction:column; }
+.ct-countdown-values b { color:#fff; font-size:40px; font-weight:800; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.ct-countdown-values span { margin-top:4px; color:#8c8c8c; font:9px "JetBrains Mono",monospace; letter-spacing:.2em; }
+.ct-progress { position:relative; height:54px; }
+.ct-progress-percent { position:absolute; top:0; transform:translateX(-50%); color:#F5BE1F; font:700 10px "JetBrains Mono",monospace; letter-spacing:.08em; transition:left 1s linear; }
+.ct-progress-ticks {
+  position:absolute; left:0; right:0; top:26px; height:11px;
+  background-image:repeating-linear-gradient(90deg,#8a8a8a 0,#8a8a8a 1px,transparent 1px,transparent 30px),
+    repeating-linear-gradient(90deg,#4a4a4a 0,#4a4a4a 1px,transparent 1px,transparent 6px);
+  border-bottom:1px solid #4a4a4a;
+}
+.ct-progress-fill {
+  position:absolute; left:0; top:26px; height:11px; overflow:hidden;
+  background-image:repeating-linear-gradient(90deg,#F5BE1F 0,#F5BE1F 1px,transparent 1px,transparent 6px);
+  border-bottom:2px solid #F5BE1F; transition:width 1s linear;
+}
+.ct-progress-marker { position:absolute; top:0; height:100%; transition:left 1s linear; }
+.ct-progress-marker i { position:absolute; left:-4px; top:15px; width:8px; height:6px; background:#F5BE1F; clip-path:polygon(0 0,100% 0,50% 100%); }
+.ct-progress-marker b { position:absolute; left:-4px; top:34px; width:8px; height:8px; border-radius:50%; background:#F5BE1F; animation:ct-pulse 1.8s ease-out infinite; }
+.ct-progress-start,.ct-progress-end { position:absolute; top:44px; color:#8c8c8c; font:8px "JetBrains Mono",monospace; letter-spacing:.14em; }
+.ct-progress-start { left:0; }
+.ct-progress-end { right:0; color:#F5BE1F; }
+.ct-hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:2px; }
+.ct-cta-primary,.ct-cta-secondary {
+  display:inline-flex; align-items:center; gap:12px; padding:16px 22px;
+  font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+}
+.ct-cta-primary { background:#F5BE1F; color:#141414; clip-path:polygon(0 0,100% 0,100% 74%,94% 100%,0 100%); }
+.ct-cta-secondary { border:1px solid #5c5c5c; color:#fff; }
+.ct-hero-art {
+  position:absolute; right:-4px; top:0; width:570px; height:730px;
+  pointer-events:none;
+}
+.ct-building-svg {
+  position:absolute; right:0; top:-12px; width:420px;
+  max-width:78%; height:auto; overflow:visible;
+}
+.ct-side-details { position:absolute; left:0; top:290px; width:142px; display:flex; flex-direction:column; gap:8px; }
+.ct-side-card { padding:9px 11px; display:flex; flex-direction:column; gap:6px; background:#181818; }
+.ct-card-label { justify-content:space-between; }
+.ct-mini-logo { display:flex; flex-direction:column; line-height:1; gap:1px; }
+.ct-mini-logo b { font-size:16px; font-weight:900; letter-spacing:-.04em; }
+.ct-mini-logo b span { color:#F5BE1F; }
+.ct-mini-logo strong { align-self:flex-start; padding:0 1px; color:#F5BE1F; border-block:1px solid #F5BE1F; font-size:9px; letter-spacing:.16em; }
+.ct-micro-label { color:#8c8c8c; font:7px "JetBrains Mono",monospace; letter-spacing:.08em; white-space:nowrap; }
+.ct-side-footer { padding-top:5px; border-top:1px dashed #3a3a3a; color:#fff; font-size:11px; font-weight:700; }
+.ct-side-footer span { color:#F5BE1F; font:9px "JetBrains Mono",monospace; letter-spacing:.1em; }
+.ct-side-card small { color:#F5BE1F; font:10px "JetBrains Mono",monospace; }
+.ct-seal { position:absolute; left:0; top:590px; width:92px; height:92px; }
+.ct-bottom-ornament { position:absolute; left:-120px; bottom:18px; width:360px; }
+@keyframes ct-pulse { 0%{box-shadow:0 0 0 0 rgba(245,190,31,.55)} 100%{box-shadow:0 0 0 9px rgba(245,190,31,0)} }
+
+@media (max-width: 1200px) {
+  .ct-hero-inner { width:min(760px,calc(100% - 48px)); min-height:0; padding:88px 0 52px; }
+  .ct-hero-copy { width:100%; max-width:620px; }
+  .ct-hero-art { position:relative; right:auto; top:auto; width:100%; height:500px; margin-top:24px; }
+  .ct-building-svg { right:0; top:0; width:min(420px,65vw); max-width:100%; }
+  .ct-side-details { left:0; top:110px; }
+  .ct-seal { top:390px; }
+  .ct-bottom-ornament { display:none; }
+}
+@media (max-width: 700px) {
+  .ct-hero { min-height:0; }
+  .ct-hero-inner { width:calc(100% - 32px); padding:88px 0 40px; }
+  .ct-hero-copy { max-width:100%; gap:17px; }
+  .ct-hero-copy h1 { font-size:clamp(37px,9.2vw,54px); line-height:.96; }
+  .ct-eyebrow { gap:8px; }
+  .ct-eyebrow p { font-size:8px; letter-spacing:.08em; }
+  .ct-intro { font-size:14px; }
+  .ct-primary-cards { flex-direction:column; }
+  .ct-date-card,.ct-place-card { flex:auto; }
+  .ct-countdown { padding:12px; }
+  .ct-countdown-heading { font-size:8px; letter-spacing:.1em; }
+  .ct-countdown-values { gap:4px; }
+  .ct-countdown-values b { font-size:clamp(25px,8vw,36px); }
+  .ct-countdown-values span { font-size:8px; letter-spacing:.12em; }
+  .ct-progress-end { font-size:7px; letter-spacing:.06em; }
+  .ct-hero-actions { flex-direction:column; }
+  .ct-cta-primary,.ct-cta-secondary { justify-content:center; }
+  .ct-hero-art { height:450px; margin-top:16px; }
+  .ct-building-svg { width:min(390px,100%); max-width:100%; top:0; }
+  .ct-side-details { top:275px; width:138px; }
+  .ct-seal { top:360px; left:auto; right:8px; width:78px; height:78px; }
+}
+@media (max-width: 390px) {
+  .ct-date-layout { gap:5px; }
+  .ct-date-range { font-size:40px; }
+  .ct-calendar { grid-template-columns:repeat(2,42px); gap:3px; }
+  .ct-calendar > div { width:42px; min-height:45px; }
+  .ct-place-layout { gap:4px; }
+  .ct-radar svg { width:68px; height:54px; }
+  .ct-countdown-values b { font-size:25px; }
+  .ct-countdown-heading { letter-spacing:.04em; }
+}
+
+
+/* Ajuste de enquadramento vertical: primeira dobra desktop */
+@media (min-width: 1201px) {
+  .ct-hero {
+    min-height: calc(100svh - 60px);
+  }
+  .ct-hero-inner {
+    min-height: calc(100svh - 60px);
+    padding-top: clamp(34px, 5vh, 54px);
+    padding-bottom: 24px;
+  }
+  .ct-hero-copy {
+    gap: clamp(11px, 1.55vh, 15px);
+  }
+  .ct-hero-copy h1 {
+    font-size: clamp(45px, 3.8vw, 59px);
+    line-height: .91;
+  }
+  .ct-intro {
+    font-size: 15px;
+    line-height: 1.42;
+  }
+  .ct-info-card {
+    padding: 10px 12px;
+  }
+  .ct-date-range {
+    font-size: 42px;
+  }
+  .ct-calendar > div {
+    min-height: 44px;
+  }
+  .ct-countdown {
+    padding: 10px 15px;
+    gap: 8px;
+  }
+  .ct-countdown-values b {
+    font-size: 35px;
+  }
+  .ct-progress {
+    height: 45px;
+  }
+  .ct-progress-ticks,
+  .ct-progress-fill {
+    top: 23px;
+  }
+  .ct-progress-marker i {
+    top: 12px;
+  }
+  .ct-progress-marker b {
+    top: 31px;
+  }
+  .ct-progress-start,
+  .ct-progress-end {
+    top: 39px;
+  }
+  .ct-cta-primary,
+  .ct-cta-secondary {
+    padding: 13px 20px;
+    font-size: 11px;
+  }
+  .ct-hero-art {
+    height: calc(100svh - 92px);
+    max-height: 700px;
+  }
+  .ct-building-svg {
+    width: min(400px, 72%);
+    top: -2px;
+  }
+  .ct-side-details {
+    top: clamp(235px, 31vh, 285px);
+  }
+  .ct-seal {
+    top: min(590px, 73vh);
+  }
+  .ct-bottom-ornament {
+    bottom: 8px;
+    width: 330px;
+  }
+}
+@media (min-width: 1201px) and (max-height: 760px) {
+  .ct-hero-inner {
+    padding-top: 28px;
+    padding-bottom: 18px;
+  }
+  .ct-hero-copy {
+    gap: 9px;
+  }
+  .ct-hero-copy h1 {
+    font-size: clamp(42px, 3.4vw, 52px);
+  }
+  .ct-countdown-values b {
+    font-size: 31px;
+  }
+  .ct-hero-art {
+    opacity: .9;
+  }
+}
+
+
+/* Final viewport fit: hero occupies the visible page area beneath the fixed header */
+@media (min-width: 1201px) {
+  .ct-hero {
+    min-height: 100svh;
+    height: 100svh;
+    box-sizing: border-box;
+  }
+  .ct-hero-inner {
+    min-height: 100svh;
+    height: 100svh;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 1201px) and (max-height: 900px) {
+  .ct-hero-copy {
+    gap: clamp(7px, 1.1vh, 12px);
+  }
+  .ct-hero-copy h1 {
+    font-size: clamp(42px, 3.45vw, 56px);
+    line-height: .9;
+  }
+  .ct-intro {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .ct-countdown-values b {
+    font-size: clamp(29px, 2.2vw, 35px);
+  }
+  .ct-hero-actions {
+    margin-top: 0;
+  }
+  .ct-cta-primary,
+  .ct-cta-secondary {
+    min-height: 48px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
+
+
+/* Refinamento de espaçamento entre a ilustração e os cartões técnicos */
+@media (min-width: 1201px) {
+  .ct-building-svg {
+    right: -16px;
+    top: 16px;
+  }
+  .ct-side-details {
+    left: -26px;
+    gap: 12px;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-building-svg {
+    right: -8px;
+    top: 14px;
+  }
+  .ct-side-details {
+    left: -12px;
+    gap: 11px;
+  }
+}
+@media (max-width: 700px) {
+  .ct-building-svg {
+    right: -4px;
+    top: 8px;
+  }
+  .ct-side-details {
+    left: 0;
+    gap: 10px;
+  }
+}
+
+/* Mantém o afastamento dos cards laterais e do edifício após alterações no Hero */
+@media (min-width: 1201px) {
+  .ct-hero-art .ct-building-svg { right: -38px !important; top: 28px !important; }
+  .ct-hero-art .ct-side-details { left: -26px !important; gap: 12px !important; }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-art .ct-building-svg { right: -18px !important; top: 20px !important; }
+  .ct-hero-art .ct-side-details { left: -12px !important; gap: 11px !important; }
+}
+@media (max-width: 700px) {
+  .ct-hero-art .ct-building-svg { right: -4px !important; top: 8px !important; }
+  .ct-hero-art .ct-side-details { left: 0 !important; gap: 10px !important; }
+}
+
+/* Mais respiro entre os cards técnicos e distância maior em relação ao prédio */
+@media (min-width: 1201px) {
+  .ct-hero-art .ct-side-details { left: 14px !important; gap: 18px !important; }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-art .ct-side-details { left: 8px !important; gap: 15px !important; }
+}
+@media (max-width: 700px) {
+  .ct-hero-art .ct-side-details { left: 0 !important; gap: 12px !important; }
+}
+
+
+/* Fundo blueprint — correspondência mais fiel à referência */
+.ct-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #222423 !important;
   background-image:
-    linear-gradient(to right, rgba(225, 222, 205, .075) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(225, 222, 205, .075) 1px, transparent 1px),
-    radial-gradient(circle, rgba(233, 185, 39, .23) 1px, transparent 1.6px);
-  background-size: 60px 60px, 60px 60px, 120px 120px;
-  background-position: center center, center center, 0 2px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), #000 78%, rgba(0,0,0,.55));
+    radial-gradient(ellipse 72% 58% at 73% 88%, rgba(155, 158, 156, .15) 0%, rgba(125, 128, 126, .08) 42%, transparent 76%),
+    linear-gradient(180deg, #141514 0%, #1b1d1c 48%, #292c2a 100%) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.civiltec-atmosphere {
-  background:
-    radial-gradient(ellipse at 53% 46%, transparent 0%, rgba(12,13,11,.08) 56%, rgba(8,9,8,.34) 100%),
-    repeating-linear-gradient(128deg, transparent 0 148px, rgba(232,229,211,.018) 149px, transparent 150px 300px);
+.ct-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .64;
+  background-image:
+    linear-gradient(rgba(218, 222, 219, .058) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 222, 219, .075) 1px, transparent 1px),
+    radial-gradient(circle, rgba(226, 229, 226, .16) 1px, transparent 1.7px);
+  background-size: 60px 60px, 60px 60px, 60px 60px;
+  background-position: 0 0, 0 0, 0 0;
 }
-@media (max-width: 1023px) {
-  .civiltec-hero { background-attachment: scroll; }
-  .civiltec-blueprint { background-size: 48px 48px, 48px 48px, 96px 96px; }
+.ct-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .72;
+  background-image:
+    radial-gradient(ellipse at 73% 66%, transparent 0 27.8%, rgba(220, 223, 220, .10) 27.95%, transparent 28.1%, transparent 42%, rgba(220, 223, 220, .075) 42.15%, transparent 42.3%, transparent 57%, rgba(220, 223, 220, .05) 57.15%, transparent 57.3%),
+    repeating-linear-gradient(135deg, transparent 0 178px, rgba(220, 223, 220, .045) 179px, transparent 180px 310px),
+    linear-gradient(90deg, transparent 0 49.94%, rgba(225, 228, 225, .075) 50%, transparent 50.06%),
+    linear-gradient(0deg, transparent 0 49.94%, rgba(225, 228, 225, .075) 50%, transparent 50.06%);
+  background-size: 100% 100%, 100% 100%, 180px 180px, 180px 180px;
+  background-position: center, center, 0 0, 0 0;
+}
+.ct-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Assets oficiais CivilTec — textura e artes responsivas */
+.ct-hero::before {
+  background-image:
+    url("/assets/civiltec/08-textura-fundo/textura-fundo.svg"),
+    linear-gradient(rgba(218, 222, 219, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218, 222, 219, .045) 1px, transparent 1px);
+  background-size: cover, 60px 60px, 60px 60px;
+  background-position: center, 0 0, 0 0;
+  background-repeat: no-repeat, repeat, repeat;
+  opacity: .58;
+}
+.ct-hero-artwork {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
+}
+.ct-hero-artwork img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.ct-side-details {
+  z-index: 2;
+}
+@media (max-width: 1200px) {
+  .ct-hero-artwork { inset: 0; }
+}
+@media (max-width: 700px) {
+  .ct-hero-artwork img { object-position: center top; }
+}
+
+
+/* Amplia a ilustração principal sem alterar a coluna de conteúdo */
+@media (min-width: 1201px) {
+  .ct-hero-artwork img {
+    transform: scale(1.42);
+    transform-origin: right center;
+  }
+}
+@media (min-width: 701px) and (max-width: 1200px) {
+  .ct-hero-artwork img {
+    transform: scale(1.22);
+    transform-origin: center center;
+  }
+}
+@media (max-width: 700px) {
+  .ct-hero-artwork img {
+    transform: scale(1.12);
+    transform-origin: center top;
+  }
+}
+
+
+/* Desloca a ilustração do prédio para a direita no desktop */
+@media (min-width: 1201px) {
+  .ct-hero-artwork img {
+    translate: 52px 0;
+  }
 }

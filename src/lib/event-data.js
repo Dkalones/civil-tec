@@ -9,11 +9,11 @@ export const EVENT = {
   city: "Araruna · Paraíba",
   venue: "Campus VIII · Prof.ª Maria da Penha (CCTS/UEPB)",
   address: "Av. Cel. Pedro Targino, s/n · Centro, Araruna — PB, 58233-000",
-  email: null,
+  email: "civitecuepb.pb@gmail.com",
   instagram: "@civiltec.uepb",
   instagramUrl: "https://www.instagram.com/civiltec.uepb/",
-  whatsapp: null,
-  whatsappUrl: null,
+  whatsapp: "83 99852-1803",
+  whatsappUrl: "https://wa.me/5583998521803",
   issn: "2965-789X",
   map: { lat: -6.535202, lng: -35.7324759 },
   mapsUrl:
@@ -55,6 +55,9 @@ export const AGENDA_TYPES = [
 ];
 
 export const AGENDA = [];
+
+// Cadastro dos minicursos será preenchido com as informações oficiais da organização.
+export const MINICOURSES = [];
 
 export const TICKETS = [];
 
