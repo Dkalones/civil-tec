@@ -18,8 +18,9 @@ import Palestrantes from "@/routes/palestrantes";
 import Programacao from "@/routes/programacao";
 import Local from "@/routes/local";
 import Patrocinio from "@/routes/patrocinio";
+import Certificados from "@/routes/certificados";
 import FaqPage from "@/routes/faq";
-import "@/index.css";
+import " @/index.css".trim();
 
 const rootRoute = createRootRoute({
   component: () => <Outlet />,
@@ -36,6 +37,7 @@ const routeTree = rootRoute.addChildren([
   createRoute({ getParentRoute: () => rootRoute, path: "/programacao", component: Programacao }),
   createRoute({ getParentRoute: () => rootRoute, path: "/local", component: Local }),
   createRoute({ getParentRoute: () => rootRoute, path: "/patrocinio", component: Patrocinio }),
+  createRoute({ getParentRoute: () => rootRoute, path: "/certificados", component: Certificados }),
   createRoute({ getParentRoute: () => rootRoute, path: "/faq", component: FaqPage }),
 ]);
 
