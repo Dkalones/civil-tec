@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Bell } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { EVENT } from "@/lib/event-data";
+import RegistrationWindow from "@/components/site/RegistrationWindow";
 
 function Page() {
   return (
@@ -16,18 +16,14 @@ function Page() {
             Faça parte do CivilTec
           </h1>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-ink-foreground/70">
-            As informações oficiais para participar do evento serão divulgadas em breve.
+            Acompanhe a contagem regressiva e garanta sua participação no congresso.
           </p>
         </div>
       </section>
       <section className="mx-auto w-full max-w-[900px] px-5 py-16 sm:px-8 md:py-24">
-        <div className="border border-dashed border-ink/25 bg-card px-6 py-14 text-center">
-          <Bell className="mx-auto h-7 w-7 text-ink/45" aria-hidden="true" />
-          <h2 className="mt-4 font-heading text-2xl font-extrabold text-ink">Inscrições em breve</h2>
-          <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-ink/60">
-            Categorias, valores, lotes, formas de pagamento e formulário de inscrição serão disponibilizados quando forem definidos pela organização.
-          </p>
-          <Link to="/" className="mt-7 inline-flex border border-ink px-5 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground">
+        <RegistrationWindow />
+        <div className="mt-8 text-center">
+          <Link to="/" className="inline-flex border border-ink px-5 py-3 font-heading text-xs font-bold uppercase tracking-[0.12em] text-ink transition hover:bg-ink hover:text-ink-foreground">
             Voltar ao site
           </Link>
         </div>
