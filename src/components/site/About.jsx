@@ -42,17 +42,17 @@ export default function About() {
           <figure className="lg:col-span-6">
             <div className="relative border border-ink/15">
               <Image
-                src={EVENT.images.concrete}
-                alt="Detalhe de parede de concreto aparente com marcação de obra"
+                src="/brand/civiltec-logo.svg"
+                alt="Logomarca oficial do evento CivilTec"
                 className="aspect-[4/3] w-full object-cover"
                 fittingType="fill"
               />
               <span className="label-mono absolute left-3 top-3 bg-ink/85 px-2 py-1 text-ink-foreground/80">
-                Fig. 01 · Concreto aparente
+                Fig. 01 · Identidade visual do CivilTec
               </span>
             </div>
             <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink/45">
-              Concreto, aço e dados: o tripé das obras em discussão no congresso.
+              Logomarca oficial do CivilTec — Congresso de Tecnologia em Construções.
             </figcaption>
           </figure>
         </div>
