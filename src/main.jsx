@@ -20,7 +20,7 @@ import Local from "@/routes/local";
 import Patrocinio from "@/routes/patrocinio";
 import Certificados from "@/routes/certificados";
 import FaqPage from "@/routes/faq";
-import " @/index.css".trim();
+import "@/index.css";
 
 const rootRoute = createRootRoute({
   component: () => <Outlet />,
