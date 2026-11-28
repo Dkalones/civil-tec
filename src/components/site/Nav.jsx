@@ -9,6 +9,7 @@ const LINKS = [
   { label: "Palestrantes", to: "/palestrantes" },
   { label: "Programação", to: "/programacao" },
   { label: "Minicursos", to: "/minicursos" },
+  { label: "Certificados", to: "/certificados" },
   { label: "Submissão", to: "/submissao" },
   { label: "Inscrições", to: "/inscricao" },
   { label: "Local", to: "/local" },
