@@ -127,6 +127,9 @@ export default function Footer() {
             >
               Submissão de trabalhos
             </Link>
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50">
+              Made by <span className="text-signal">João D</span>
+            </span>
           </div>
         </div>
       </div>
