@@ -127,9 +127,15 @@ export default function Footer() {
             >
               Submissão de trabalhos
             </Link>
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50">
+            <a
+              href="https://www.instagram.com/j0aodieg0/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram de João D"
+              className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-foreground/50 transition hover:text-signal"
+            >
               Made by <span className="text-signal">João D</span>
-            </span>
+            </a>
           </div>
         </div>
       </div>
