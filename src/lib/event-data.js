@@ -12,8 +12,8 @@ export const EVENT = {
   email: "civitecuepb.pb@gmail.com",
   instagram: "@civiltec.uepb",
   instagramUrl: "https://www.instagram.com/civiltec.uepb/",
-  whatsapp: "83 9852-1803",
-  whatsappUrl: "https://wa.me/558398521803",
+  whatsapp: "83 99852-1803",
+  whatsappUrl: "https://wa.me/5583998521803",
   issn: "2965-789X",
   map: { lat: -6.535202, lng: -35.7324759 },
   mapsUrl:
