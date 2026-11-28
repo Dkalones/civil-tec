@@ -45,7 +45,7 @@ export default function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Link to="/inscricao" className={`${btnPrimary} notch hidden !min-h-[44px] !px-5 !py-2 !text-[10px] sm:inline-flex`}>Inscreva-se</Link>
+          <Link to="/" hash="ingressos" className={`${btnPrimary} notch hidden !min-h-[44px] !px-5 !py-2 !text-[10px] sm:inline-flex`}>Inscreva-se</Link>
           <button type="button" onClick={() => setOpen((v) => !v)} className="grid h-11 w-11 place-items-center text-white lg:hidden" aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
             {open ? <X className="h-6 w-6"/> : <Menu className="h-6 w-6"/>}
           </button>
@@ -56,7 +56,7 @@ export default function Nav() {
           <nav className="flex flex-col">
             {LINKS.map((l) => <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="border-b border-white/10 py-4 font-heading text-lg font-semibold text-white">{l.label}</Link>)}
           </nav>
-          <Link to="/inscricao" onClick={() => setOpen(false)} className={`${btnPrimary} mt-6 w-full`}>Garantir minha vaga</Link>
+          <Link to="/" hash="ingressos" onClick={() => setOpen(false)} className={`${btnPrimary} mt-6 w-full`}>Garantir minha vaga</Link>
           <p className="label-mono mt-6 text-white/45">{EVENT.dateShort} · {EVENT.city}</p>
         </div>
       )}
