@@ -9,23 +9,26 @@ export default function About() {
         <SectionHeading
           index="02"
           eyebrow="Sobre o congresso"
-          title="Engenharia que se discute na prática."
-          description="O CivilTec reúne estudantes, professores e o setor produtivo da Paraíba para discutir o que já muda a forma de projetar, construir e manter edificações."
+          title="Tecnologia, Inovação e Soluções para o Amanhã"
+          description="A Engenharia Civil está em constante transformação, impulsionada pela tecnologia, pela inovação e pela busca por soluções mais eficientes e sustentáveis."
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-6">
             <div className="space-y-5 text-[16.5px] leading-relaxed text-ink/75">
               <p>
-                O congresso é organizado pelo CiviTec, no Campus VIII da UEPB — Centro de Ciências,
-                Tecnologia e Saúde (CCTS), em Araruna. A proposta é tirar o debate técnico do
-                abstrato: cada tema chega com aplicação real, dados de obra e espaço para
-                perguntas.
+                O I Congresso Regional de Engenharia Civil — CIVIL TEC nasce com o propósito de
+                conectar estudantes, professores, pesquisadores e profissionais, promovendo
+                conhecimento, integração e troca de experiências.
               </p>
               <p>
-                A programação combina palestras de 50 minutos, minicursos de quatro horas,
-                visitas a empreendimentos da região, competições estudantis e noites de
-                integração — do concreto protendido ao aerolevantamento com drones.
+                Com o tema “Tecnologia, Inovação e Soluções para o Amanhã”, o evento reúne
+                palestras, debates e apresentações científicas para aproximar o conhecimento
+                acadêmico dos desafios e oportunidades do mercado, incentivando novas ideias e
+                soluções para o futuro da engenharia.
+              </p>
+              <p className="font-medium text-ink">
+                O futuro da engenharia começa com o conhecimento e se transforma por meio da inovação.
               </p>
             </div>
 
