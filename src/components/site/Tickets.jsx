@@ -3,7 +3,7 @@ import RegistrationWindow from "@/components/site/RegistrationWindow";
 
 export default function Tickets() {
   return (
-    <section id="ingressos" className="border-t border-ink/10 bg-background">
+    <section id="ingressos" className="scroll-mt-20 border-t border-ink/10 bg-background">
       <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28">
         <SectionHeading
           index="06"
