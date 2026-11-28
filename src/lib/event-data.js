@@ -56,6 +56,9 @@ export const AGENDA_TYPES = [
 
 export const AGENDA = [];
 
+// Cadastro dos minicursos será preenchido com as informações oficiais da organização.
+export const MINICOURSES = [];
+
 export const TICKETS = [];
 
 export const SUBMISSION_DEADLINES = [];
