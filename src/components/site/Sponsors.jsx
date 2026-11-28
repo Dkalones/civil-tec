@@ -65,7 +65,9 @@ export default function Sponsors() {
             action={
               EVENT.email ? (
                 <a
-                  href={`mailto:${EVENT.email}?subject=Apoio%20ao%20CivilTec`}
+                  href={`${EVENT.whatsappUrl}?text=Ol%C3%A1!%20Tenho%20interesse%20em%20ser%20apoiador%20do%20CivilTec.%20Poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="label-mono inline-flex items-center gap-2 self-start border-b border-signal pb-1 text-ink-foreground transition hover:text-signal md:self-end"
                 >
                   Seja um apoiador
